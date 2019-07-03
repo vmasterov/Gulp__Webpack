@@ -1,10 +1,9 @@
 module.exports = {
     development: {
         base: 'gulp-development',
-        styles: 'gulp-development/scss/gulp-main.scss',
+        styles: 'gulp-development/styles/gulp-main.scss',
         pages: 'gulp-development/html/**/*.+(php|html)',
-        'js:pages': ['gulp-development/js/modules/**/*.js', 'gulp-development/js/pages/**/*.js'],
-        // 'js:modules': 'gulp-development/js/modules/**/*.js',
+        'js:chunks': ['gulp-development/js/modules/**/*.js', 'gulp-development/js/chunks/**/*.js'],
         libs: [
             'node_modules/jquery/dist/jquery.min.js'
         ],
@@ -19,9 +18,22 @@ module.exports = {
 
     watch: {
         pages: 'gulp-development/html/**/*.+(php|html)',
-        styles: 'gulp-development/scss/**/*.*',
-        js: ['gulp-development/js/modules/**/*.js', 'gulp-development/js/pages/**/*.js'],
-        // 'js:modules': 'gulp-development/js/modules/**/*.js'
+        styles: 'gulp-development/styles/**/*.*',
+        js: ['gulp-development/js/modules/**/*.js', 'gulp-development/js/chunks/**/*.js'],
+
+
+        /**
+         * make one task: images and uploads, but output into different folders
+         */
+        // pictures: ['gulp-development/images/**/*.*', 'gulp-development/upload/**/*.*'],
+
+
+
+
+
+
+
+
     },
 
     production: {
@@ -38,8 +50,7 @@ module.exports = {
     tasks: {
         styles: './gulp-development/tasks/styles',
         'styles:libs': './gulp-development/tasks/styles-libs',
-        'js:pages': './gulp-development/tasks/js-pages',
-        // 'js:modules': './gulp-development/tasks/js-modules',
+        'js:chunks': './gulp-development/tasks/js-chunks',
         'js:libs': './gulp-development/tasks/js-libs',
         'js:webpack': './gulp-development/tasks/js-webpack',
         pages: './gulp-development/tasks/pages',

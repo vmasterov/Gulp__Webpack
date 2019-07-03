@@ -1,0 +1,21 @@
+/* Fonts example */
+@font-face {
+  font-family: "HelveticaNeueCyr";
+  src:
+          url("../../fonts/Helvetica/HelveticaRegular/HelveticaRegular.eot"),
+          url("../../fonts/Helvetica/HelveticaRegular/HelveticaRegular.woff") format("woff"),
+          url("../../fonts/Helvetica/HelveticaRegular/HelveticaRegular.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelveticaNeueCyr";
+  src:
+          url("../../fonts/Helvetica/HelveticaBold/HelveticaBold.eot"),
+          url("../../fonts/Helvetica/HelveticaBold/HelveticaBold.woff") format("woff"),
+          url("../../fonts/Helvetica/HelveticaBold/HelveticaBold.ttf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+/* Fonts example */

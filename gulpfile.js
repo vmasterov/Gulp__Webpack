@@ -61,37 +61,19 @@ lazyRequireTask('styles:libs', paths.tasks['styles:libs'], {
 
 
 /**
- * JavaScript pages
+ * JavaScript chunks
  *
- * Task name: js:pages
+ * Task name: js:chunks
  *
  * Description:
  * Bundling JS
  * For production: minification, rename, add hash to file name
  */
-lazyRequireTask('js:pages', paths.tasks['js:pages'], {
-    srcFrom: paths.development['js:pages'],
+lazyRequireTask('js:chunks', paths.tasks['js:chunks'], {
+    srcFrom: paths.development['js:chunks'],
     srcTo: paths.common.temp
 });
 
-
-
-/**
- * JavaScript modules
- *
- * Task name: js:modules
- *
- * Description:
- * Bundling JS modules
- * For production: minification, rename, add hash to file name
- */
-/*
-lazyRequireTask('js:modules', paths.tasks['js:modules'], {
-    srcFrom: paths.development.jsModules,
-    srcTo: paths.production.js,
-    manifest: paths.common.manifest
-});
-*/
 
 
 /**
@@ -121,7 +103,7 @@ lazyRequireTask('js:libs', paths.tasks['js:libs'], {
  * For production: minification, rename, add hash to file name
  */
 lazyRequireTask('js:webpack', paths.tasks['js:webpack'], {
-    srcFrom: paths.development['js:pages'],
+    srcFrom: paths.development['js:chunks'],
     srcTo: paths.production.js,
     entry: paths.common.temp + '/gulp-main.js',
     includeBase: paths.development.base,
@@ -194,7 +176,6 @@ lazyRequireTask('files', paths.tasks.files, {
 
 
 
-
 /**
  * HTML
  *
@@ -225,8 +206,11 @@ lazyRequireTask('pages', paths.tasks.pages, {
  * Remove the destination folder
  */
 lazyRequireTask('clean', paths.tasks.clean, {
-    srcFrom: paths.production.base,
-    srcManifest: paths.common.manifest
+    srcFrom: [
+        paths.production.base,
+        paths.common.manifest,
+        paths.common.temp
+    ]
 });
 
 
@@ -244,7 +228,7 @@ lazyRequireTask('watch', paths.tasks.watch, {
         watchStyles: paths.watch.styles,
         watchPages: paths.watch.pages,
         watchJs: paths.watch.js,
-        watchJsModules: paths.watch['js:modules']
+        // watchImages: paths.watch.pictures
     }
 });
 
@@ -270,8 +254,7 @@ gulp.task(
         gulp.parallel(
             'styles',
             'styles:libs',
-            'js:pages',
-            // 'js:modules',
+            'js:chunks',
             'js:libs',
             'fonts',
             'images',
@@ -294,8 +277,7 @@ gulp.task(
         gulp.parallel(
             'styles',
             'styles:libs',
-            'js',
-            'js:modules',
+            'js:chunks',
             'js:libs',
             'fonts',
             'images',

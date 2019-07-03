@@ -6,9 +6,6 @@ const del = require('del');
 
 module.exports = function(options) {
     return function() {
-        return del([
-            options.srcFrom,
-            options.srcManifest
-        ]);
+        return del(options.srcFrom);
     };
 };
