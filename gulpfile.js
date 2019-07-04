@@ -38,7 +38,8 @@ function lazyRequireTask(taskName, path, options) {
 lazyRequireTask('styles', paths.tasks.styles, {
     srcFrom: paths.development.styles,
     srcTo: paths.production.styles,
-    srcManifest: paths.common.manifest
+    srcManifest: paths.common.manifest,
+    srcManifestImages: paths.common.manifestImages
 });
 
 
@@ -139,7 +140,7 @@ lazyRequireTask('fonts', paths.tasks.fonts, {
  */
 lazyRequireTask('images', paths.tasks.images, {
     srcFrom: [paths.development.images, paths.development.upload],
-    srcTo: [paths.production.images, paths.production.upload],
+    srcTo: paths.production.base,
     manifest: paths.common.manifest
 });
 
@@ -262,16 +263,17 @@ gulp.task(
     'production',
     gulp.series(
         'clean',
+        'images',
         gulp.parallel(
             'styles',
             'styles:libs',
             'js:chunks',
             'js:libs',
             'fonts',
-            'images',
             'files'
         ),
         'js:webpack',
-        'pages'
+        'pages',
+        'server'
     )
 );

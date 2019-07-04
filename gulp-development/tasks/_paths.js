@@ -47,11 +47,8 @@ module.exports = {
 
         js: 'gulp-production/js',
 
-        images: 'gulp-production/images',
-        upload: 'gulp-production/upload',
-
         files: 'gulp-production/files',
-        fonts: 'gulp-production/fonts',
+        fonts: 'gulp-production/fonts'
     },
 
 
@@ -89,7 +86,7 @@ module.exports = {
         manifestJsModules: './gulp-development/manifest/js-modules.json',
         manifestJsLibs: './gulp-development/manifest/js-libs.json',
 
-        manifestImages: './gulp-development/manifest/images.json',
+        manifestImages: 'gulp-development/manifest/images.json',
 
         temp: './gulp-development/temp',
 

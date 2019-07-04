@@ -14,7 +14,7 @@ const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'developm
 module.exports = function(options) {
     return function() {
         return combine(
-            gulp.src(options.srcFrom),
+            gulp.src(options.srcFrom, {base: 'gulp-development'}),
             $.if(!isDevelopment, combine(
                 $.rev(),
                 $.imagemin(
@@ -35,18 +35,7 @@ module.exports = function(options) {
                     })
                 )
             ),
-            gulp.dest(function (file) {
-                const folder = file.dirname.match(/(?:\\|\/)([0-9A-Za-zА-ЯЁа-яё_@$*()={}'"|<>:^,!.&?`#%№~ +-]+)$/);
-
-                switch(folder[1]) {
-                    case 'images':
-                        return options.srcTo[0];
-                    case 'upload':
-                        return options.srcTo[1];
-                    default:
-                        return options.srcTo[0];
-                }
-            }),
+            gulp.dest(options.srcTo),
             $.if(!isDevelopment, combine(
                 $.rev.manifest('images.json'),
                 gulp.dest(options.manifest))

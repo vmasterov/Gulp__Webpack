@@ -13,11 +13,35 @@ $.sass.compiler = sassCompiler;
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 module.exports = function(options) {
+    let manifest;
+    const root = process.cwd();
+
+
+    if (!isDevelopment) {
+        manifest = require(root + '/' + options.srcManifestImages);
+    }
+
+    function url(urlLiteral) {
+
+        const fileName = urlLiteral.match(/(?=\\|\/)?([0-9A-Za-zА-ЯЁа-яё_@$*()={}'"|<>:^,!.&?`#%№~ +-]+)(?=\\|\/)?/g).reverse();
+        let imageURL;
+
+        // console.log(urlLiteral, fileName, manifest);
+
+        if (fileName[1] === 'images' || fileName[1] === 'upload') {
+            imageURL = '/' + manifest[fileName[1] + '/' + fileName[0]];
+        }
+
+        return imageURL;
+    }
+
+
     return function() {
         return combine(
             gulp.src(options.srcFrom),
             $.if(isDevelopment, $.sourcemaps.init()),
             $.sass(),
+            $.if(!isDevelopment, $.cssReplaceUrl({replace: url})),
             $.if(isDevelopment, $.sourcemaps.write()),
             $.if(!isDevelopment, combine(
                 $.rev(),
