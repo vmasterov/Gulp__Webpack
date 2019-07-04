@@ -32,7 +32,7 @@ function lazyRequireTask(taskName, path, options) {
  * Task name: styles
  *
  * Description:
- * SCSS to CSS, autoprefix
+ * SCSS to CSS
  * For production: minification, rename, add hash to file name
  */
 lazyRequireTask('styles', paths.tasks.styles, {
@@ -66,8 +66,8 @@ lazyRequireTask('styles:libs', paths.tasks['styles:libs'], {
  * Task name: js:chunks
  *
  * Description:
- * Bundling JS
- * For production: minification, rename, add hash to file name
+ * Concatenation JS
+ * For production: concatenation JS
  */
 lazyRequireTask('js:chunks', paths.tasks['js:chunks'], {
     srcFrom: paths.development['js:chunks'],
@@ -82,7 +82,7 @@ lazyRequireTask('js:chunks', paths.tasks['js:chunks'], {
  * Task name: js:libs
  *
  * Description:
- * Bundling JS libraries
+ * Concatenation JS libraries
  * For production: minification and rename
  */
 lazyRequireTask('js:libs', paths.tasks['js:libs'], {
@@ -99,7 +99,7 @@ lazyRequireTask('js:libs', paths.tasks['js:libs'], {
  * Task name: js:webpack
  *
  * Description:
- * Bundling JS
+ * Bundling JS chunks
  * For production: minification, rename, add hash to file name
  */
 lazyRequireTask('js:webpack', paths.tasks['js:webpack'], {
@@ -119,7 +119,7 @@ lazyRequireTask('js:webpack', paths.tasks['js:webpack'], {
  *
  * Description:
  * Copy fonts
- * For production: -
+ * For production: copy fonts
  */
 lazyRequireTask('fonts', paths.tasks.fonts, {
     srcFrom: paths.development.fonts,
@@ -134,28 +134,13 @@ lazyRequireTask('fonts', paths.tasks.fonts, {
  * Task name: images
  *
  * Description:
- * Copy images
- * For production: -
+ * Copy images to images and upload folders
+ * For production: minification images
  */
 lazyRequireTask('images', paths.tasks.images, {
-    srcFrom: paths.development.images,
-    srcTo: paths.production.images
-});
-
-
-
-/**
- * Upload
- *
- * Task name: upload
- *
- * Description:
- * Copy content of upload folder
- * For production: -
- */
-lazyRequireTask('upload', paths.tasks.upload, {
-    srcFrom: paths.development.upload,
-    srcTo: paths.production.upload
+    srcFrom: [paths.development.images, paths.development.upload],
+    srcTo: [paths.production.images, paths.production.upload],
+    manifest: paths.common.manifest
 });
 
 
@@ -166,8 +151,8 @@ lazyRequireTask('upload', paths.tasks.upload, {
  * Task name: files
  *
  * Description:
- * Copy Copy content of files folder
- * For production: -
+ * Copy files
+ * For production: copy files
  */
 lazyRequireTask('files', paths.tasks.files, {
     srcFrom: paths.development.files,
@@ -177,13 +162,13 @@ lazyRequireTask('files', paths.tasks.files, {
 
 
 /**
- * HTML
+ * PAGES
  *
- * Task name: html
+ * Task name: pages
  *
  * Description:
- * Copy HTML files into destination folder
- * For production: create the manifest file for JS, JS modules, CSS (for right path resolve)
+ * Copy HTML or PHP files into destination folder
+ * For production: create the manifest file for JS chunks, JS modules, CSS
  */
 lazyRequireTask('pages', paths.tasks.pages, {
     srcFrom: paths.development.pages,
@@ -192,7 +177,8 @@ lazyRequireTask('pages', paths.tasks.pages, {
     srcManifestCssLibs: paths.common.manifestCssLibs,
     srcManifestJs: paths.common.manifestJs,
     srcManifestJsModules: paths.common.manifestJsModules,
-    srcManifestJsLibs: paths.common.manifestJsLibs
+    srcManifestJsLibs: paths.common.manifestJsLibs,
+    srcManifestImages: paths.common.manifestImages
 });
 
 
@@ -203,7 +189,7 @@ lazyRequireTask('pages', paths.tasks.pages, {
  * Task name: clean
  *
  * Description:
- * Remove the destination folder
+ * Remove gulp-production, manifest, temp folders
  */
 lazyRequireTask('clean', paths.tasks.clean, {
     srcFrom: [
@@ -221,14 +207,14 @@ lazyRequireTask('clean', paths.tasks.clean, {
  * Task name: watch
  *
  * Description:
- * Watching watching and updating CSS, HTML, images files if it was changed
+ * Watching and updating CSS, HTML, images files if it was changed
  */
 lazyRequireTask('watch', paths.tasks.watch, {
     srcFrom: {
         watchStyles: paths.watch.styles,
         watchPages: paths.watch.pages,
         watchJs: paths.watch.js,
-        // watchImages: paths.watch.pictures
+        watchImages: paths.watch.images
     }
 });
 
@@ -248,6 +234,7 @@ lazyRequireTask('server', paths.tasks.server, {
 });
 
 
+
 gulp.task(
     'development',
     gulp.series('clean',
@@ -258,7 +245,6 @@ gulp.task(
             'js:libs',
             'fonts',
             'images',
-            'upload',
             'files'
         ),
         'js:webpack',
@@ -269,7 +255,9 @@ gulp.task(
         )
     )
 );
-/*
+
+
+
 gulp.task(
     'production',
     gulp.series(
@@ -281,10 +269,9 @@ gulp.task(
             'js:libs',
             'fonts',
             'images',
-            'upload',
             'files'
         ),
+        'js:webpack',
         'pages'
     )
 );
-*/

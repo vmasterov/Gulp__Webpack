@@ -1,5 +1,5 @@
 // This page
-console.log('Hello from page1');
+console.log('Hello from test-page');
 
 // Modules
 testModule.sayHi();

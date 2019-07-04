@@ -13,9 +13,7 @@ module.exports = function(options) {
     return function() {
         return combine(
             gulp.src(options.srcFrom),
-            $.if(isDevelopment, $.sourcemaps.init()),
             $.concat('gulp-libs.js'),
-            $.if(isDevelopment, $.sourcemaps.write()),
             $.if(!isDevelopment, combine(
                 $.rev(),
                 $.uglifyEs.default(),

@@ -59,6 +59,7 @@ module.exports = function (options) {
 
 
     if (!isDevelopment) {
+        console.log(process.cwd() + '/' + options.manifest);
         webpackOptions.plugins.push(new assetsPlugin({
             filename: 'js.json',
             path: process.cwd() + '/' + options.manifest,
@@ -67,6 +68,7 @@ module.exports = function (options) {
                     assets[key + '.js'] = assets[key].js.slice(webpackOptions.output.publicPath.length);
                     delete assets[key];
                 }
+
                 return JSON.stringify(assets);
             }
         }));

@@ -15,6 +15,7 @@ module.exports = function(options) {
     const manifestJs = gulp.src(options.srcManifestJs, {'allowEmpty': true});
     const manifestJsModules = gulp.src(options.srcManifestJsModules, {'allowEmpty': true});
     const manifestJsLibs = gulp.src(options.srcManifestJsLibs, {'allowEmpty': true});
+    const manifestImages = gulp.src(options.srcManifestImages, {'allowEmpty': true});
 
     return function() {
         return combine(
@@ -39,6 +40,10 @@ module.exports = function(options) {
                 $.revRewrite({
                     manifest: manifestCssLibs,
                     replaceInExtensions: ['.js', '.css', '.html', '.hbs', '.php']
+                }),
+                $.revRewrite({
+                    manifest: manifestImages,
+                    replaceInExtensions: ['.js', '.css', '.html', '.hbs', '.php', '.jpeg', '.jpg', '.png', '.gif', '.svg']
                 })
             )),
             gulp.dest(options.srcTo)
