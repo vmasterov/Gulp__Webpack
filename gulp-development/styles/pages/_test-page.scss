@@ -3,7 +3,16 @@ body{
 }
 
 .test-header{
+  font-family: 'Oswald', sans-serif;
   text-align: center;
+}
+
+h1.test-header{
+  font-weight: bold;
+}
+
+h2.test-header{
+  font-weight: normal;
 }
 
 .test-image{
@@ -29,4 +38,9 @@ body{
 
 .test-upload-1{
   background-image: url('/upload/1.jpg');
+}
+
+.images img{
+  width: 260px;
+  height: 170px;
 }

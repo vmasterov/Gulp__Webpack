@@ -26,10 +26,12 @@ module.exports = function(options) {
         const fileName = urlLiteral.match(/(?=\\|\/)?([0-9A-Za-zА-ЯЁа-яё_@$*()={}'"|<>:^,!.&?`#%№~ +-]+)(?=\\|\/)?/g).reverse();
         let imageURL;
 
-        // console.log(urlLiteral, fileName, manifest);
-
         if (fileName[1] === 'images' || fileName[1] === 'upload') {
             imageURL = '/' + manifest[fileName[1] + '/' + fileName[0]];
+        }
+
+        else{
+            imageURL = urlLiteral;
         }
 
         return imageURL;

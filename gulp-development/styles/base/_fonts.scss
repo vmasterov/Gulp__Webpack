@@ -1,20 +1,20 @@
 /* Fonts example */
 @font-face {
-  font-family: "HelveticaNeueCyr";
+  font-family: "Oswald";
   src:
-          url("../../fonts/Helvetica/HelveticaRegular/HelveticaRegular.eot"),
-          url("../../fonts/Helvetica/HelveticaRegular/HelveticaRegular.woff") format("woff"),
-          url("../../fonts/Helvetica/HelveticaRegular/HelveticaRegular.ttf") format("opentype");
+          //url("../../fonts/Helvetica/HelveticaRegular/HelveticaRegular.eot"),
+          //url("../../fonts/Helvetica/HelveticaRegular/HelveticaRegular.woff") format("woff"),
+          url("../../fonts/Oswald[wght].ttf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "HelveticaNeueCyr";
+  font-family: "Oswald SemiBold";
   src:
-          url("../../fonts/Helvetica/HelveticaBold/HelveticaBold.eot"),
-          url("../../fonts/Helvetica/HelveticaBold/HelveticaBold.woff") format("woff"),
-          url("../../fonts/Helvetica/HelveticaBold/HelveticaBold.ttf") format("opentype");
+          //url("../../fonts/Helvetica/HelveticaRegular/HelveticaRegular.eot"),
+          //url("../../fonts/Helvetica/HelveticaRegular/HelveticaRegular.woff") format("woff"),
+          url("../../fonts/Oswald[wght].ttf") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
