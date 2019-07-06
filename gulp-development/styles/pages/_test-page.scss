@@ -43,4 +43,9 @@ h2.test-header{
 .images img{
   width: 260px;
   height: 170px;
+
+  @include respond-below(l){
+    margin-bottom: 15px;
+    width: 100%;
+  }
 }

@@ -1,9 +1,14 @@
 export default class EsTestModule {
-    constructor () {
-        this.name = 'Test';
-    }
+    constructor () {}
 
-    sayHi() {
-        console.log('Hello from Es-test-module!');
+    sayHi(name) {
+        if (!name) {
+            console.error('Name should not be an empty string');
+            return false;
+        }
+        else{
+            console.log(`${name}! Hello from Es-test-module!`);
+            return true;
+        }
     }
 }
