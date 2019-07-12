@@ -99,11 +99,6 @@ Gulp
 
 ***
 
-
-## NPM scripts
-
-***
-
 ### Testing
 
 **Chai + Mocha**
@@ -111,6 +106,9 @@ Gulp
 https://learn.javascript.ru/testing, https://dev.to/bnorbertjs/my-nodejs-setup-mocha--chai-babel7-es6-43ei
 
 ***
+
+## NPM scripts
+
 
 ### Development build
 npm run d
