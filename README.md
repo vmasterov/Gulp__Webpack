@@ -25,25 +25,29 @@
 * **Site:** https://webpack.js.org/
 * **Screencast:** https://www.youtube.com/watch?v=kLMjOd-x0aQ&list=PLDyvV36pndZHfBThhg4Z0822EEG9VGenn
 
+*** 
 
-Пакеты
-Сборка JS
+## Сборка JS
 
-ES6 модули (js-webpack.js)
-Webpack + Babel
+**ES6 модули (js-webpack.js)**
+* Webpack + Babel
 
-Babel
-Оф. сайт: https://babeljs.io/
+**Babel**
+* **Оф. сайт:** https://babeljs.io/
 
-JS модули	(js-modules.js)
-JS чанки (js-chunks.js)
-JS библиотеки (js-libs.js)
+***
+
+* **JS модули**	(js-modules.js)
+* **JS чанки** (js-chunks.js)
+* **JS библиотеки** (js-libs.js)
 Gulp
 
+***
 
-Тестирование
-Chai + Mocha
-Статьи по тестированию: 
+## Тестирование
+
+**Chai + Mocha**
+* **Статьи по тестированию:**
 https://learn.javascript.ru/testing
 https://dev.to/bnorbertjs/my-nodejs-setup-mocha--chai-babel7-es6-43ei
 
