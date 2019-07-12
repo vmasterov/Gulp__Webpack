@@ -3,8 +3,8 @@
 ## Requirements
 
 #### NodJS >=8.11.4
-**Download:** https://nodejs.org/en/
-**Screencast:** https://www.youtube.com/watch?v=ILpS4Fq3lmw&list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg
+* **Download:** https://nodejs.org/en/
+* **Screencast:** https://www.youtube.com/watch?v=ILpS4Fq3lmw&list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg
 
 ***
 
