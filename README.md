@@ -1,36 +1,24 @@
 # Common build
 
 ## Requirements
+
 #### NodJS >=8.11.4
 Скачать: https://nodejs.org/en/
 Скринкаст: https://www.youtube.com/watch?v=ILpS4Fq3lmw&list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg
 
+***
+
 #### NPM >=6.4.1
 Оф. сайт: https://www.npmjs.com/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+***
 
 #### Gulp
 CLI version: >=2.2.0
 Local version: >=4.0.2
 Скринкаст: https://www.youtube.com/watch?v=uPk6lQoTThE&list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ
 
+***
 
 #### Webpack >=4.35.2
 Оф. сайт: https://webpack.js.org/
