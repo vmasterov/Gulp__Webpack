@@ -52,14 +52,6 @@ Gulp
 
 ***
 
-### Testing
-
-**Chai + Mocha**
-* **Articles:**
-https://learn.javascript.ru/testing, https://dev.to/bnorbertjs/my-nodejs-setup-mocha--chai-babel7-es6-43ei
-
-***
-
 ### Image optimazing: (images.js)
 * gulp-imagemin
 * imagemin-jpeg-recompress
@@ -114,6 +106,15 @@ https://learn.javascript.ru/testing, https://dev.to/bnorbertjs/my-nodejs-setup-m
 
 ***
 
+***
+
+### Testing
+
+**Chai + Mocha**
+* **Articles:**
+https://learn.javascript.ru/testing, https://dev.to/bnorbertjs/my-nodejs-setup-mocha--chai-babel7-es6-43ei
+
+***
 
 ### Development build
 npm run d
