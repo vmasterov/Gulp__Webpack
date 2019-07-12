@@ -27,7 +27,9 @@
 
 *** 
 
-## Build JS
+## Tasks
+
+### Build JS
 
 **ES6-modules (js-webpack.js)**
 * Webpack + Babel
@@ -57,45 +59,75 @@ https://learn.javascript.ru/testing, https://dev.to/bnorbertjs/my-nodejs-setup-m
 * imagemin-jpeg-recompress
 * imagemin-pngquant
 
+
+
 ### Sass preprocessor (styles-libs.js, styles.js)
+
+***
+
 
 ### Files versions (pages.js)
  * gulp-rev
  * gulp-rev-rewrite
  
+***
+ 
+ 
 ### Static files (files.js, fonts.js)
 
+***
+
+
 ### Watching changes (watch.js) 
+
+***
+
 
 ### BrowserSync (server.js)
 * **Site:** https://www.browsersync.io/
 
+***
+
+
 ### HTML (pages.js)
+
+***
+
 
 ### Clean (clean.js)
 
+***
+
+
 ### Pathes to files (_paths.js)
 
-## Сборка проекта для разработки
+***
+
+
+## NPM scripts
+
+***
+
+
+### Development build
 npm run d
 
-Сборка проекта для продакшена
+***
+
+### Production build
 npm run p
 
-Запуск тестирования es-модулей
+***
+
+
+### Testing build
 npm run t
 
-Тестирование других скриптов
+***
+
+### Testing another scripts
 Загрузка файла test/test-modules/test-module.spec.html
  
+***
 
-
-
-
-
-
-
-
-
-
-Если какие-то ссылки не работают попробовть зайти через анонимайзер.
+If any links don't work, use anonymizer
