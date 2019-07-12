@@ -27,54 +27,56 @@
 
 *** 
 
-## Сборка JS
+## Build JS
 
-**ES6 модули (js-webpack.js)**
+**ES6-modules (js-webpack.js)**
 * Webpack + Babel
 
 **Babel**
-* **Оф. сайт:** https://babeljs.io/
+* **Site:** https://babeljs.io/
 
 ***
 
-* **JS модули**	(js-modules.js)
-* **JS чанки** (js-chunks.js)
-* **JS библиотеки** (js-libs.js)
+* **JS-modules**	(js-modules.js)
+* **JS-chunks** (js-chunks.js)
+* **JS-libs** (js-libs.js)
 Gulp
 
 ***
 
-## Тестирование
+### Testing
 
 **Chai + Mocha**
-* **Статьи по тестированию:**
-https://learn.javascript.ru/testing
-https://dev.to/bnorbertjs/my-nodejs-setup-mocha--chai-babel7-es6-43ei
+* **Articles:**
+https://learn.javascript.ru/testing, https://dev.to/bnorbertjs/my-nodejs-setup-mocha--chai-babel7-es6-43ei
 
-Оптимизация изображений: (images.js)
-gulp-imagemin
-imagemin-jpeg-recompress
-imagemin-pngquant
+***
 
-Sass preprocessor (styles-libs.js, styles.js)
+### Image optimazing: (images.js)
+* gulp-imagemin
+* imagemin-jpeg-recompress
+* imagemin-pngquant
 
-Версифицирование файлов (pages.js)
- gulp-rev
- gulp-rev-rewrite
+### Sass preprocessor (styles-libs.js, styles.js)
+
+### Files versions (pages.js)
+ * gulp-rev
+ * gulp-rev-rewrite
  
-Перенос статических файлов (files.js, fonts.js)
+### Static files (files.js, fonts.js)
 
-Слежение за изменениями (watch.js) 
+### Watching changes (watch.js) 
 
-Автоперезагрузка страницы (server.js)
+### BrowserSync (server.js)
+* **Site:** https://www.browsersync.io/
 
-Перенос HTML (pages.js)
+### HTML (pages.js)
 
-Очистка фалов (clean.js)
+### Clean (clean.js)
 
-Пути к файлам (_paths.js)
+### Pathes to files (_paths.js)
 
-Сборка проекта для разработки
+## Сборка проекта для разработки
 npm run d
 
 Сборка проекта для продакшена
