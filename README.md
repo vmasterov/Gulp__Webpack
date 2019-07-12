@@ -16,7 +16,6 @@
 #### Gulp
 * **CLI version:** >=2.2.0
 * **Local version:** >=4.0.2
-
 * **Screencast**: https://www.youtube.com/watch?v=uPk6lQoTThE&list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ
 
 ***
@@ -127,7 +126,7 @@ npm run t
 ***
 
 ### Testing another scripts
-Загрузка файла test/test-modules/test-module.spec.html
+Open file into a browser: test/test-modules/test-module.spec.html
  
 ***
 
