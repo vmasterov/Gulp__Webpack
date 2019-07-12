@@ -39,8 +39,14 @@
 
 ***
 
-* **JS-modules**	(js-modules.js)
+**JS-modules**	(js-modules.js)
+
+***
+
 * **JS-chunks** (js-chunks.js)
+
+***
+
 * **JS-libs** (js-libs.js)
 Gulp
 
