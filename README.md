@@ -57,7 +57,7 @@ Gulp
 * imagemin-jpeg-recompress
 * imagemin-pngquant
 
-
+***
 
 ### Sass preprocessor (styles-libs.js, styles.js)
 
@@ -75,11 +75,9 @@ Gulp
 
 ***
 
-
 ### Watching changes (watch.js) 
 
 ***
-
 
 ### BrowserSync (server.js)
 * **Site:** https://www.browsersync.io/
