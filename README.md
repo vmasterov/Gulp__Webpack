@@ -106,8 +106,6 @@ Gulp
 
 ***
 
-***
-
 ### Testing
 
 **Chai + Mocha**
