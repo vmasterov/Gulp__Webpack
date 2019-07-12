@@ -43,11 +43,11 @@
 
 ***
 
-* **JS-chunks** (js-chunks.js)
+**JS-chunks** (js-chunks.js)
 
 ***
 
-* **JS-libs** (js-libs.js)
+**JS-libs** (js-libs.js)
 Gulp
 
 ***
