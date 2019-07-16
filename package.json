@@ -1,6 +1,6 @@
 {
   "name": "Gulp-Webpack-ES7-ES-modules-BrowserSync-build",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "gulpfile.js",
   "directories": {

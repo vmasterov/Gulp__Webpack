@@ -39,7 +39,8 @@ lazyRequireTask('styles', paths.tasks.styles, {
     srcFrom: paths.development.styles,
     srcTo: paths.production.styles,
     srcManifest: paths.common.manifest,
-    srcManifestImages: paths.common.manifestImages
+    srcManifestImages: paths.common.manifestImages,
+    // scrServer: '/add_this_string_into_begin_of_path_to_every_image_or_fonts'
 });
 
 

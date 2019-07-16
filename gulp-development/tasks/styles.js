@@ -23,18 +23,28 @@ module.exports = function(options) {
 
     function url(urlLiteral) {
 
-        const fileName = urlLiteral.match(/(?=\\|\/)?([0-9A-Za-zА-ЯЁа-яё_@$*()={}'"|<>:^,!.&?`#%№~ +-]+)(?=\\|\/)?/g).reverse();
-        let imageURL;
+        const filePathArray = urlLiteral.match(/(?=\\|\/)?([0-9A-Za-zА-ЯЁа-яё_@$*()={}'"|<>:^,!.&?`#%№~ +-]+)(?=\\|\/)?/g).reverse();
+        let imageUrl = '';
+        let imageUrlHash = '';
 
-        if (fileName[1] === 'images' || fileName[1] === 'upload') {
-            imageURL = '/' + manifest[fileName[1] + '/' + fileName[0]];
+        if (filePathArray[filePathArray.length - 1] === 'images' || filePathArray[filePathArray.length - 1] === 'upload') {
+            for (let i = filePathArray.length - 1, l = 0; i >= l; i--) {
+                (i !== 0) ? imageUrl += filePathArray[i] + '/' : imageUrl += filePathArray[i];
+            }
+
+            imageUrlHash = '/' + manifest[imageUrl];
         }
 
         else{
-            imageURL = urlLiteral;
+            imageUrlHash = urlLiteral;
         }
 
-        return imageURL;
+        // If local path and server path is different
+        if (options.scrServer) {
+            imageUrlHash = options.scrServer + imageUrlHash;
+        }
+
+        return imageUrlHash;
     }
 
 
