@@ -16,11 +16,15 @@
 <div class="container">
 
     <!-- Divs background -->
-
     <section class="divs">
         <div class="row">
             <div class="col-md-12">
                 <h1 class="test-header">Gulp, Webpack (es7, es modules), BrowserSync build</h1>
+
+                <?php $lang = "PHP"; ?>
+
+                <h2 class="test-header">Version: <strong><?= $lang ?></strong></h2>
+                <hr>
                 <h2 class="test-header">Divs background</h2>
             </div>
         </div>
@@ -46,7 +50,6 @@
 
 
     <!-- Images -->
-
     <section class="images">
         <div class="row">
             <div class="col-md-12">
@@ -72,6 +75,7 @@
             </div>
         </div>
     </section>
+
 </div>
 
 <script src="/js/gulp-libs.js"></script>

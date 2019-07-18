@@ -225,10 +225,10 @@ lazyRequireTask('watch', paths.tasks.watch, {
 /**
  * Serve
  *
- * Task name: serve
+ * Task name: server
  *
  * Description:
- * A basic use is to watch all CSS and HTML files and update connected browsers if a change occurs
+ * A basic use is to watch all files in gulp-development and update connected browsers if a change occurs
  */
 lazyRequireTask('server', paths.tasks.server, {
     watch: paths.common.serverWatch,
@@ -237,6 +237,25 @@ lazyRequireTask('server', paths.tasks.server, {
 
 
 
+/**
+ * Server PHP
+ *
+ * Task name: server:php
+ *
+ * Description:
+ * Start default PHP server then start BrowserSync.
+ * A basic use is to watch all files in gulp-development and update connected browsers if a change occurs
+ */
+lazyRequireTask('server:php', paths.tasks['server:php'], {
+    watch: paths.common.serverWatch,
+    server: paths.production.base
+});
+
+
+
+/**
+ * Build HTML project
+ */
 gulp.task(
     'development',
     gulp.series('clean',
@@ -254,11 +273,10 @@ gulp.task(
         gulp.parallel(
         'watch',
         'server'
+
         )
     )
 );
-
-
 
 gulp.task(
     'production',
@@ -276,5 +294,51 @@ gulp.task(
         'js:webpack',
         'pages',
         'server'
+    )
+);
+
+
+
+/**
+ * Build PHP project
+ */
+
+gulp.task(
+    'development:php',
+    gulp.series('clean',
+        gulp.parallel(
+            'styles',
+            'styles:libs',
+            'js:chunks',
+            'js:libs',
+            'fonts',
+            'images',
+            'files'
+        ),
+        'js:webpack',
+        'pages',
+        gulp.parallel(
+            'watch',
+            'server:php'
+        )
+    )
+);
+
+gulp.task(
+    'production:php',
+    gulp.series(
+        'clean',
+        'images',
+        gulp.parallel(
+            'styles',
+            'styles:libs',
+            'js:chunks',
+            'js:libs',
+            'fonts',
+            'files'
+        ),
+        'js:webpack',
+        'pages',
+        'server:php'
     )
 );
