@@ -109,13 +109,23 @@ https://learn.javascript.ru/testing, https://dev.to/bnorbertjs/my-nodejs-setup-m
 ## NPM scripts
 
 
-### Development build
+### Development build: HTML
 npm run d
 
 ***
 
-### Production build
+### Production build: HTML
 npm run p
+
+***
+
+### Development build: PHP
+npm run d_php
+
+***
+
+### Production build: PHP
+npm run p_php
 
 ***
 
