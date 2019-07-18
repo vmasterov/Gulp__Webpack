@@ -110,21 +110,25 @@ https://learn.javascript.ru/testing, https://dev.to/bnorbertjs/my-nodejs-setup-m
 
 
 ### Development build: HTML
+#### BrowserSync start with index.html
 npm run d
 
 ***
 
 ### Production build: HTML
+#### BrowserSync start with index.html
 npm run p
 
 ***
 
 ### Development build: PHP
+#### BrowserSync start with index.php
 npm run d_php
 
 ***
 
 ### Production build: PHP
+#### BrowserSync start with index.php
 npm run p_php
 
 ***
