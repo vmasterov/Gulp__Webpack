@@ -1,0 +1,7 @@
+@import 'abstract/mixins';
+
+@include respond-below(m){
+  .footer-copy{
+    text-align: center;
+  }
+}

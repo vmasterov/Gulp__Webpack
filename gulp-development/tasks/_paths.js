@@ -4,7 +4,7 @@ module.exports = {
 
         pages: 'gulp-development/pages/**/*.+(php|html)',
 
-        styles: 'gulp-development/styles/gulp-main.scss',
+        styles: 'gulp-development/styles/*.scss',
         styleLibs: [
             'node_modules/bootstrap/dist/css/bootstrap.min.css'
         ],
