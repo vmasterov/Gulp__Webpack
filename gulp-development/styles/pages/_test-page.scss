@@ -83,15 +83,15 @@ h2.test-header{
 }
 
 .test-images-1{
-  background-image: url('/images/sub-folder/1.jpg');
+  background-image: url('/images/sub-folder/0.jpg');
 }
 
 .test-upload-0{
-  background-image: url('/upload/0.jpg');
+  background-image: url('/images/1.jpg');
 }
 
 .test-upload-1{
-  background-image: url('/upload/1.jpg');
+  background-image: url('/images/2.jpg');
 }
 
 .images img{
@@ -106,4 +106,13 @@ h2.test-header{
 
 .test-content{
   margin-bottom: 60px;
+}
+
+footer {
+  height: 50px;
+  border-top: 1px solid #677b7d24;
+  color: #000;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  line-height: 50px;
 }
