@@ -9,12 +9,15 @@ module.exports = {
             'node_modules/bootstrap/dist/css/bootstrap.min.css'
         ],
 
-        'js:chunks': [
+        jsChunks: [
             'gulp-development/js/modules/**/*.js',
             'gulp-development/js/chunks/**/*.js'
         ],
         libs: [
             'node_modules/jquery/dist/jquery.min.js'
+        ],
+        jsHead: [
+            'gulp-development/js/head/**/*.js'
         ],
 
         images: 'gulp-development/images/**/*.*',
@@ -30,7 +33,9 @@ module.exports = {
         styles: 'gulp-development/styles/**/*.*',
         js: [
             'gulp-development/js/modules/**/*.js',
-            'gulp-development/js/chunks/**/*.js'],
+            'gulp-development/js/chunks/**/*.js',
+            'gulp-development/js/head/**/*.js'
+        ],
         images: [
             'gulp-development/images/**/*.*',
             'gulp-development/upload/**/*.*'
@@ -56,11 +61,12 @@ module.exports = {
         pages: './gulp-development/tasks/pages',
 
         styles: './gulp-development/tasks/styles',
-        'styles:libs': './gulp-development/tasks/styles-libs',
+        stylesLibs: './gulp-development/tasks/styles-libs',
 
-        'js:chunks': './gulp-development/tasks/js-chunks',
-        'js:libs': './gulp-development/tasks/js-libs',
-        'js:webpack': './gulp-development/tasks/js-webpack',
+        jsChunks: './gulp-development/tasks/js-chunks',
+        jsLibs: './gulp-development/tasks/js-libs',
+        jsWebpack: './gulp-development/tasks/js-webpack',
+        jsHead: './gulp-development/tasks/js-head',
 
         images: './gulp-development/tasks/images',
         upload: './gulp-development/tasks/upload',
@@ -74,7 +80,7 @@ module.exports = {
 
         server: './gulp-development/tasks/server',
 
-        'server:php': './gulp-development/tasks/server-php',
+        serverPhp: './gulp-development/tasks/server-php',
     },
 
 
@@ -87,6 +93,7 @@ module.exports = {
         manifestJs: './gulp-development/manifest/js.json',
         manifestJsModules: './gulp-development/manifest/js-modules.json',
         manifestJsLibs: './gulp-development/manifest/js-libs.json',
+        manifestJsHead: './gulp-development/manifest/js-head.json',
 
         manifestImages: 'gulp-development/manifest/images.json',
 

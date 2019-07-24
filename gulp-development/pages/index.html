@@ -10,8 +10,35 @@
 
     <!-- Critical path styles  -->
     <style>
+        /* Fonts example */
+        @font-face {
+            font-family: "Oswald";
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+            src: local("Oswald"), url("/fonts/Oswald[wght].ttf") format("opentype");
+
+            /* For modern browsers this fonts enough */
+            /*src: url("/fonts/Helvetica/HelveticaRegular/HelveticaRegular.woff2") format("woff2"),*/
+            /*src: url("/fonts/Helvetica/HelveticaRegular/HelveticaRegular.woff") format("woff"),*/
+        }
+
+        @font-face {
+            font-family: "Oswald SemiBold";
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+            src: local("Oswald SemiBold"), url("/fonts/Oswald[wght].ttf") format("opentype");
+
+            /* For modern browsers this fonts enough */
+            /*src: url("/fonts/Helvetica/HelveticaRegular/HelveticaRegular.woff2") format("woff2"),*/
+            /*src: url("/fonts/Helvetica/HelveticaRegular/HelveticaRegular.woff") format("woff"),*/
+        }
+        /* Fonts example */
+
         body{
-            font-size: 16px;
+            font-family: 'Oswald', Arial, sans-serif !important;
+            font-size: 16px !important;
         }
 
         .header{
@@ -19,7 +46,7 @@
             width: 100%;
             height: 650px;
             background-color: #fff;
-            background-image: url('/upload/2.jpg');
+            background-image: url('/upload/2-1920.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -44,7 +71,6 @@
         }
 
         .test-header{
-            font-family: 'Oswald', sans-serif;
             text-align: center;
         }
 
@@ -77,31 +103,84 @@
         }
 
         .test-images-0{
-            background-image: url('/images/0.jpg');
+            background-image: url('/images/0-260.jpg');
         }
 
         .test-images-1{
-            background-image: url('/images/sub-folder/0.jpg');
+            background-image: url('/images/sub-folder/0-260.jpg');
         }
 
         .test-upload-0{
-            background-image: url('/images/1.jpg');
+            background-image: url('/images/1-260.jpg');
         }
 
         .test-upload-1{
-            background-image: url('/images/2.jpg');
+            background-image: url('/images/2-260.jpg');
         }
 
-        @media (max-width:991px){.header{height:450px}.header__text{margin-top:120px}h1.test-header{font-size:60px;line-height:85px}.images img{margin:0 auto 15px;display:block}}
+        @media (max-width:991px){
+            .header{
+                height:450px;
+                background-image: url('/upload/2-991.jpg');
+            }
 
-        @media (max-width:767px){.header__text{margin-top:180px}h1.test-header{font-size:24px;line-height:35px}}
+            .header__text{
+                margin-top:120px
+            }
+            h1.test-header{
+                font-size:60px;
+                line-height:85px
+            }
+
+            .images img{
+                margin:0 auto 15px;
+                display:block
+            }
+
+            .test-images-0{
+                background-image: url('/images/0.jpg');
+            }
+
+            .test-images-1{
+                background-image: url('/images/sub-folder/0.jpg');
+            }
+
+            .test-upload-0{
+                background-image: url('/images/1.jpg');
+            }
+
+            .test-upload-1{
+                background-image: url('/images/2.jpg');
+            }
+        }
+
+        @media (max-width:767px){
+            .header{
+                height:450px;
+                background-image: url('/upload/2-767.jpg');
+            }
+
+            .header__text{
+                margin-top:180px
+            }
+
+            h1.test-header{
+                font-size:24px;
+                line-height:35px
+            }
+        }
+
+        @media (max-width:320px) {
+            .header {
+                height: 450px;
+                background-image: url('/upload/2-320.jpg');
+            }
+        }
     </style>
 
-    <!--
-    <link rel="stylesheet" href="/css/gulp-libs.css" media="screen">
-    <link rel="stylesheet" href="/css/gulp-main.css" media="screen">
-    <link rel="stylesheet" href="/css/gulp-main-media-below-m.css" media="(max-width: 767px)">
-    -->
+    <!-- Head script -->
+    <!--<script src="/js/gulp-head.js" async></script>-->
+
 </head>
 
 <body>
@@ -193,7 +272,7 @@
 </footer>
 
 <script>
-    (function (head) {
+    (function () {
         const styles = [
             {
                 url: '/css/gulp-libs.css',
@@ -210,7 +289,6 @@
         ];
 
         styles.forEach(function(style) {
-            console.log(style);
             let link = document.createElement('link');
 
             link.setAttribute('rel', 'stylesheet');

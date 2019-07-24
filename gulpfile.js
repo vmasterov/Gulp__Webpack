@@ -54,7 +54,7 @@ lazyRequireTask('styles', paths.tasks.styles, {
  * Concatenation libs files
  * For production: minification, rename, add hash to file name
  */
-lazyRequireTask('styles:libs', paths.tasks['styles:libs'], {
+lazyRequireTask('styles:libs', paths.tasks.stylesLibs, {
     srcFrom: paths.development.styleLibs,
     srcTo: paths.production.styles,
     srcManifest: paths.common.manifest
@@ -71,8 +71,24 @@ lazyRequireTask('styles:libs', paths.tasks['styles:libs'], {
  * Concatenation JS
  * For production: concatenation JS
  */
-lazyRequireTask('js:chunks', paths.tasks['js:chunks'], {
-    srcFrom: paths.development['js:chunks'],
+lazyRequireTask('js:chunks', paths.tasks.jsChunks, {
+    srcFrom: paths.development.jsChunks,
+    srcTo: paths.common.temp
+});
+
+
+
+/**
+ * JavaScript head
+ *
+ * Task name: js:head
+ *
+ * Description:
+ * Concatenation JS from head section
+ * For production: concatenation JS from head section
+ */
+lazyRequireTask('js:head', paths.tasks.jsHead, {
+    srcFrom: paths.development.jsHead,
     srcTo: paths.common.temp
 });
 
@@ -87,7 +103,7 @@ lazyRequireTask('js:chunks', paths.tasks['js:chunks'], {
  * Concatenation JS libraries
  * For production: minification and rename
  */
-lazyRequireTask('js:libs', paths.tasks['js:libs'], {
+lazyRequireTask('js:libs', paths.tasks.jsLibs, {
     srcFrom: paths.development.libs,
     srcTo: paths.production.js,
     manifest: paths.common.manifest
@@ -104,10 +120,14 @@ lazyRequireTask('js:libs', paths.tasks['js:libs'], {
  * Bundling JS chunks
  * For production: minification, rename, add hash to file name
  */
-lazyRequireTask('js:webpack', paths.tasks['js:webpack'], {
-    srcFrom: paths.development['js:chunks'],
+lazyRequireTask('js:webpack', paths.tasks.jsWebpack, {
+    srcFrom: paths.development.jsChunks,
     srcTo: paths.production.js,
-    entry: paths.common.temp + '/gulp-main.js',
+    // entry: paths.common.temp + '/gulp-main.js',
+    entry: [
+        paths.common.temp + '/gulp-main.js',
+        paths.common.temp + '/gulp-head.js'
+    ],
     includeBase: paths.development.base,
     manifest: paths.common.manifest
 });
@@ -246,7 +266,7 @@ lazyRequireTask('server', paths.tasks.server, {
  * Start default PHP server then start BrowserSync.
  * A basic use is to watch all files in gulp-development and update connected browsers if a change occurs
  */
-lazyRequireTask('server:php', paths.tasks['server:php'], {
+lazyRequireTask('server:php', paths.tasks.serverPhp, {
     watch: paths.common.serverWatch,
     server: paths.production.base
 });
@@ -263,6 +283,7 @@ gulp.task(
             'styles',
             'styles:libs',
             'js:chunks',
+            'js:head',
             'js:libs',
             'fonts',
             'images',
@@ -287,6 +308,7 @@ gulp.task(
             'styles',
             'styles:libs',
             'js:chunks',
+            'js:head',
             'js:libs',
             'fonts',
             'files'
@@ -310,6 +332,7 @@ gulp.task(
             'styles',
             'styles:libs',
             'js:chunks',
+            'js:head',
             'js:libs',
             'fonts',
             'images',
@@ -333,6 +356,7 @@ gulp.task(
             'styles',
             'styles:libs',
             'js:chunks',
+            'js:head',
             'js:libs',
             'fonts',
             'files'

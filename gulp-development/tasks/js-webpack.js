@@ -5,7 +5,7 @@ const $ = require('gulp-load-plugins')();
 const gulp = require('gulp');
 const gulplog = require('gulplog');
 const path = require('path');
-const named = require('vinyl-named');
+// const named = require('vinyl-named'); REMOVE FROM PACKAGE.JSON
 const webpackStream = require('webpack-stream');
 const webpack = webpackStream.webpack;
 const assetsPlugin = require('assets-webpack-plugin');
@@ -33,7 +33,8 @@ module.exports = function (options) {
 
     let webpackOptions = {
         entry: {
-            'gulp-main': options.entry
+            'gulp-main': options.entry[0],
+            'gulp-head': options.entry[1]
         },
         output: {
             publicPath: '/js/',
@@ -85,7 +86,7 @@ module.exports = function (options) {
                     })
                 )
             }),
-            named(),
+            // named(),
             webpackStream(webpackOptions, null, done),
             $.if(!isDevelopment, $.uglify()),
             gulp.dest(options.srcTo).on('data', function () {
