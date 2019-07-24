@@ -44,7 +44,8 @@ module.exports = function(options) {
                 $.revRewrite({
                     manifest: manifestImages,
                     replaceInExtensions: ['.js', '.css', '.html', '.hbs', '.php', '.jpeg', '.jpg', '.png', '.gif', '.svg']
-                })
+                }),
+                $.htmlmin({ collapseWhitespace: true })
             )),
             gulp.dest(options.srcTo)
         );
