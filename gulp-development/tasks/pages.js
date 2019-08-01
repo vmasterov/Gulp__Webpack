@@ -1,6 +1,7 @@
 'use strict';
 
 
+const fs = require('fs');
 const $ = require('gulp-load-plugins')();
 const gulp = require('gulp');
 const combine = require('stream-combiner2').obj;
@@ -16,6 +17,8 @@ module.exports = function(options) {
     const manifestJsModules = gulp.src(options.srcManifestJsModules, {'allowEmpty': true});
     const manifestJsLibs = gulp.src(options.srcManifestJsLibs, {'allowEmpty': true});
     const manifestImages = gulp.src(options.srcManifestImages, {'allowEmpty': true});
+
+    const styleHeadContent = fs.readFileSync(process.cwd() + options.srcStylesHead, 'utf8');
 
     return function() {
         return combine(
@@ -47,6 +50,9 @@ module.exports = function(options) {
                 }),
                 $.htmlmin({ collapseWhitespace: true })
             )),
+
+            $.injectString.after('<style>', styleHeadContent),
+
             gulp.dest(options.srcTo)
         );
     }

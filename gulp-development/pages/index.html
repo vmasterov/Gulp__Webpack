@@ -9,177 +9,15 @@
     <title>Gulp, Webpack (es7, es modules), BrowserSync build</title>
 
     <!-- Critical path styles  -->
-    <style>
-        /* Fonts example */
-        @font-face {
-            font-family: "Oswald";
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-            src: local("Oswald"), url("/fonts/Oswald[wght].ttf") format("opentype");
+    <style></style>
+    <!-- !Critical path styles  -->
 
-            /* For modern browsers this fonts enough */
-            /*src: url("/fonts/Helvetica/HelveticaRegular/HelveticaRegular.woff2") format("woff2"),*/
-            /*src: url("/fonts/Helvetica/HelveticaRegular/HelveticaRegular.woff") format("woff"),*/
-        }
-
-        @font-face {
-            font-family: "Oswald SemiBold";
-            font-weight: bold;
-            font-style: normal;
-            font-display: swap;
-            src: local("Oswald SemiBold"), url("/fonts/Oswald[wght].ttf") format("opentype");
-
-            /* For modern browsers this fonts enough */
-            /*src: url("/fonts/Helvetica/HelveticaRegular/HelveticaRegular.woff2") format("woff2"),*/
-            /*src: url("/fonts/Helvetica/HelveticaRegular/HelveticaRegular.woff") format("woff"),*/
-        }
-        /* Fonts example */
-
-        body{
-            font-family: 'Oswald', Arial, sans-serif !important;
-            font-size: 16px !important;
-        }
-
-        .header{
-            position: relative;
-            width: 100%;
-            height: 650px;
-            background-color: #fff;
-            background-image: url('/upload/2-1920.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        .header:after{
-             content: '';
-             position: absolute;
-             top: 0;
-             left: 0;
-             width: 100%;
-             height: 100%;
-             background-color: rgba(187, 236, 255, 0.35);
-         }
-
-        .header .header__text{
-            position: relative;
-            margin-top: 150px;
-            z-index: 1;
-            color: #fff;
-            text-shadow: 0 2px 1px black;
-        }
-
-        .test-header{
-            text-align: center;
-        }
-
-        h1.test-header{
-            font-size: 95px;
-            line-height: 130px;
-            font-weight: bold;
-        }
-
-        .images img{
-            width: 260px;
-            height: 170px;
-        }
-
-        .test-content{
-            margin-bottom: 60px;
-        }
-
-        h2.test-header{
-            font-weight: normal;
-        }
-
-        .test-image{
-            margin-bottom: 15px;
-            width: 100%;
-            height: 170px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .test-images-0{
-            background-image: url('/images/0-260.jpg');
-        }
-
-        .test-images-1{
-            background-image: url('/images/sub-folder/0-260.jpg');
-        }
-
-        .test-upload-0{
-            background-image: url('/images/1-260.jpg');
-        }
-
-        .test-upload-1{
-            background-image: url('/images/2-260.jpg');
-        }
-
-        @media (max-width:991px){
-            .header{
-                height:450px;
-                background-image: url('/upload/2-991.jpg');
-            }
-
-            .header__text{
-                margin-top:120px
-            }
-            h1.test-header{
-                font-size:60px;
-                line-height:85px
-            }
-
-            .images img{
-                margin:0 auto 15px;
-                display:block
-            }
-
-            .test-images-0{
-                background-image: url('/images/0.jpg');
-            }
-
-            .test-images-1{
-                background-image: url('/images/sub-folder/0.jpg');
-            }
-
-            .test-upload-0{
-                background-image: url('/images/1.jpg');
-            }
-
-            .test-upload-1{
-                background-image: url('/images/2.jpg');
-            }
-        }
-
-        @media (max-width:767px){
-            .header{
-                height:450px;
-                background-image: url('/upload/2-767.jpg');
-            }
-
-            .header__text{
-                margin-top:180px
-            }
-
-            h1.test-header{
-                font-size:24px;
-                line-height:35px
-            }
-        }
-
-        @media (max-width:320px) {
-            .header {
-                height: 450px;
-                background-image: url('/upload/2-320.jpg');
-            }
-        }
-    </style>
+    <!-- Dynamic added styles -->
+    <!-- !Dynamic added styles -->
 
     <!-- Head script -->
     <!--<script src="/js/gulp-head.js" async></script>-->
+    <!-- !Head script -->
 
 </head>
 
@@ -190,16 +28,13 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="header__text">
-                    <!--<h1 class="test-header">Gulp, Webpack, ES7,<br>ES-modules, BrowserSync build</h1>-->
-
-                    <h1 class="test-header"><a href="https://www.npmjs.com/package/gulp-inject-string">gulp-inject-string</a></h1>
-                    <h1 class="test-header"><a href="https://stackoverflow.com/questions/29770191/gulp-how-do-i-read-file-content-into-a-variable">Gulp: How do I read file content into a variable?</a></h1>
-                    <h1 class="test-header">const fs = require('fs');</h1>
+                    <h1 class="test-header">Gulp, Webpack, ES7,<br>ES-modules, BrowserSync build</h1>
                 </div>
             </div>
         </div>
     </div>
 </header>
+<!-- !Header -->
 
 <section class="test-content">
     <div class="container">
@@ -232,7 +67,7 @@
                 </div>
             </div>
         </section>
-
+        <!-- !Divs background -->
 
         <!-- Images -->
         <section class="images">
@@ -260,6 +95,7 @@
                 </div>
             </div>
         </section>
+        <!-- !Images -->
 
     </div>
 </section>
@@ -274,7 +110,10 @@
         </div>
     </div>
 </footer>
+<!-- !Footer -->
 
+<!-- Scripts -->
+<!-- Script for dynamic adding styles -->
 <script>
     (function () {
         const styles = [
@@ -292,7 +131,16 @@
             }
         ];
 
-        styles.forEach(function(style) {
+        let node;
+        let head = document.getElementsByTagName('head')[0];
+
+        head.childNodes.forEach(nodeItem => {
+            if (nodeItem.nodeType === 8 && nodeItem.nodeValue.trim() === '!Dynamic added styles') {
+                node = nodeItem;
+            }
+        });
+
+        styles.forEach(style => {
             let link = document.createElement('link');
 
             link.setAttribute('rel', 'stylesheet');
@@ -300,12 +148,16 @@
             link.setAttribute('href', style.url);
             link.setAttribute('media', style.media);
 
-            document.getElementsByTagName('head')[0].appendChild(link);
+            // document.getElementsByTagName('head')[0].appendChild(link);
+            head.insertBefore(link, node);
         });
+
     })();
 </script>
+<!-- !Script for dynamic adding styles -->
 <script src="/js/gulp-libs.js"></script>
 <script src="/js/gulp-main.js"></script>
+<!-- !Scripts -->
 </body>
 
 </html>

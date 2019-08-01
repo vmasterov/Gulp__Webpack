@@ -5,6 +5,7 @@ module.exports = {
         pages: 'gulp-development/pages/**/*.+(php|html)',
 
         styles: 'gulp-development/styles/*.scss',
+        stylesHead: 'gulp-development/styles/gulp-head.scss',
         styleLibs: [
             'node_modules/bootstrap/dist/css/bootstrap.min.css'
         ],
@@ -49,6 +50,7 @@ module.exports = {
         pages: 'gulp-production',
 
         styles: 'gulp-production/css',
+        stylesHead: 'gulp-development/temp',
 
         js: 'gulp-production/js',
 
@@ -61,6 +63,7 @@ module.exports = {
         pages: './gulp-development/tasks/pages',
 
         styles: './gulp-development/tasks/styles',
+        stylesHead: './gulp-development/tasks/styles-head',
         stylesLibs: './gulp-development/tasks/styles-libs',
 
         jsChunks: './gulp-development/tasks/js-chunks',
@@ -99,6 +102,8 @@ module.exports = {
 
         temp: './gulp-development/temp',
 
-        serverWatch: './gulp-development/**/*.*'
+        serverWatch: './gulp-development/**/*.*',
+
+        stylesHead: '/gulp-development/temp/gulp-head.css',
     }
 };

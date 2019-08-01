@@ -46,6 +46,24 @@ lazyRequireTask('styles', paths.tasks.styles, {
 
 
 /**
+ * Styles for header
+ *
+ * Task name: styles-head
+ *
+ * Description:
+ * Get CSS from temp/gulp-head.css and inline it to page's header
+ * For production: minification
+ */
+lazyRequireTask('styles:head', paths.tasks.stylesHead, {
+    srcFrom: paths.development.stylesHead,
+    srcTo: paths.production.stylesHead,
+    srcManifestImages: paths.common.manifestImages
+    // scrServer: '/add_this_string_into_begin_of_path_to_every_image_or_fonts'
+});
+
+
+
+/**
  * Styles libs
  *
  * Task name: styles:libs
@@ -200,7 +218,8 @@ lazyRequireTask('pages', paths.tasks.pages, {
     srcManifestJs: paths.common.manifestJs,
     srcManifestJsModules: paths.common.manifestJsModules,
     srcManifestJsLibs: paths.common.manifestJsLibs,
-    srcManifestImages: paths.common.manifestImages
+    srcManifestImages: paths.common.manifestImages,
+    srcStylesHead: paths.common.stylesHead,
 });
 
 
@@ -281,6 +300,7 @@ gulp.task(
     gulp.series('clean',
         gulp.parallel(
             'styles',
+            'styles:head',
             'styles:libs',
             'js:chunks',
             'js:head',
@@ -306,6 +326,7 @@ gulp.task(
         'images',
         gulp.parallel(
             'styles',
+            'styles:head',
             'styles:libs',
             'js:chunks',
             'js:head',
@@ -330,6 +351,7 @@ gulp.task(
     gulp.series('clean',
         gulp.parallel(
             'styles',
+            'styles:head',
             'styles:libs',
             'js:chunks',
             'js:head',
@@ -354,6 +376,7 @@ gulp.task(
         'images',
         gulp.parallel(
             'styles',
+            'styles:head',
             'styles:libs',
             'js:chunks',
             'js:head',
