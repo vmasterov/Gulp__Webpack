@@ -141,7 +141,6 @@ lazyRequireTask('js:libs', paths.tasks.jsLibs, {
 lazyRequireTask('js:webpack', paths.tasks.jsWebpack, {
     srcFrom: paths.development.jsChunks,
     srcTo: paths.production.js,
-    // entry: paths.common.temp + '/gulp-main.js',
     entry: [
         paths.common.temp + '/gulp-main.js',
         paths.common.temp + '/gulp-head.js'
