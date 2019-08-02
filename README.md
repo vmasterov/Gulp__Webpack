@@ -9,55 +9,128 @@ All tasks launches from gulpfile.js and get 'options' argument that contain nece
 ***
 
 ### clean.js
-Will be launched before any build. Will remove folders from 'options.srcFrom'.
+#### Development, production:
+* will be launched before any build, 
+* will remove folders from 'options.srcFrom'.
 
 ***
 
 ### images.js
 #### Development:
-Copy project's images to the folder from 'options.srcFrom'.
+* copy project's images to the folder from 'options.srcFrom'.
 
 #### Production:
-Add hash to files names, optimization images, write image info to the manifest.
+The same as in development plus:
+* add hashes to files names,
+* optimization image,
+* write image info to the manifest.
 
 ***
 
 ### js-chunks.js and js-head.js
 #### Development, production:
-Concatenate files from 'options.srcFrom' to gulp-main.js and move it to folder from 'options.srcTo' ('temp' folder). Later js-webpack.js will take it from this folder for next manipulation 
+* concatenate files from 'options.srcFrom' to gulp-main.js,
+* move it to folder from 'options.srcTo' ('temp' folder), 
+* later js-webpack.js will take it from this folder for next manipulation. (Since the webpack needs one file, and there are many chunks, you must first combine them).
 
 ***
 
 ### js-webpack.js
 #### Development:
-Pick up files from 'options.entry' array. (This files are located into 'temp' folder. js-chunks.js put it there). Babel-loader transpile modern JS to current version, uglify it and put it into 'options.srcTo'.
+* pick up files from 'options.entry' array. (This files are located into 'temp' folder. js-chunks.js put it there), 
+* add sourcemap to it, 
+* Babel-loader transpile modern JS to current version,
+* uglify it,
+* put it into 'options.srcTo'.
 
 #### Production:
-The same as in development plus will be added hashes to files
+The same as in development plus:
+* will be added hashes to files.
 
 ***
 
 ### js-libs.js
 #### Development:
-Concatenate files from 'options.srcFrom' to gulp-main.js and move it to folder from 'options.srcTo'.
+* concatenate files from 'options.srcFrom' to gulp-main.js,
+* move it to folder from 'options.srcTo'.
 
 #### Production:
-The same as in development plus uglify it, rename (add '.min' suffix), write file name to the manifest.
+The same as in development plus:
+* uglify it,
+* rename (add '.min' suffix),
+* write file name to the manifest.
 
 ***
 
 ### pages.js
 #### Development:
-Move files to folder from 'options.srcTo'. Inject critical path styles as a string to head section of pages
+* move files to folder from 'options.srcTo',
+* inject critical path styles as a string to head section of pages.
 
 #### Production:
-The same as in development plus replace normal names with hashes names from the proper manifest.
+The same as in development plus:
+* replace normal names with hashes names from the proper manifest.
 
 ***
 
 ### server.js
 #### Development and production:
-Launch BrowserSync. Pass 'server' option from 'options.server'. Add 'watch' listener to 'change' event.
+* launch BrowserSync,
+* pass 'server' option from 'options.server',
+* add 'watch' listener to BrowserSync 'change' event.
+
+***
+
+### server-php.js
+#### Development and production:
+* launch BrowserSync
+* launch default php server (php -S localhost:8000),
+* set 'base' option equal './gulp-production',
+* use proxy for connection,
+* add 'watch' listener to BrowserSync 'change' event.
+
+***
+
+### styles.js
+#### Development:
+* move files to folder from 'options.srcTo',
+* add sourcemap to it,
+* peplace SCSS with CSS.
+
+#### Production:
+The same as in development plus:
+* replace normal background images paths with hashes paths,
+* write CSS file name to the manifest.
+
+***
+
+### styles-head.js
+#### Development:
+* inline file into head section of pages.
+
+#### Production:
+The same as in development plus:
+* replace normal background images paths with hashes paths,
+* replace SCSS with CSS, 
+* minify it.
+
+***
+
+### styles-libs.js
+#### Development:
+* Concatenate files from 'options.srcFrom' to gulp-libs.css,
+* move it to folder from 'options.srcTo'.
+
+#### Production:
+The same as in development plus:
+* rename (add '.min' suffix),
+* write file name to the manifest.
+
+***
+
+### watch.js
+#### Development and production:
+* watch at changes into specify paths and launch proper task.
 
 ***
 
