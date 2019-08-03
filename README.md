@@ -146,21 +146,11 @@ The same as in development plus:
 
 ## Requirements
 
-#### NodeJS >=8.11.4
-* **[Download](https://nodejs.org/en/)** 
-* **[Screencast](https://www.youtube.com/watch?v=ILpS4Fq3lmw&list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg)**
-
-***
-
-#### NPM >=6.4.1
-* **[Site](https://www.npmjs.com/)** 
-
-***
-
-#### Gulp
-* **CLI version** >=2.2.0
-* **Local version** >=4.0.2
-* **[Screencast](https://www.youtube.com/watch?v=uPk6lQoTThE&list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ)**
+* NodeJS >=8.11.4
+* NPM >=6.4.1
+* Gulp
+  * CLI version >=2.2.0
+  * Local version >=4.0.2
 
 *** 
 
