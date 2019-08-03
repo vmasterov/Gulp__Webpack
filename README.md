@@ -69,7 +69,7 @@ The same as in development plus:
 
 #### Production:
 The same as in development plus:
-* replace normal names with hashes names from the proper manifest.
+* replace normal names of JS, CSS, images and other files with hashes names from the proper manifest.
 
 ***
 
