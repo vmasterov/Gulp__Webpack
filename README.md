@@ -106,7 +106,8 @@ The same as in development plus:
 
 ### styles-head.js
 #### Development:
-* inline file into head section of pages.
+* move files to folder from 'options.srcTo' ('temp' folder),
+* replace SCSS with CSS.
 
 #### Production:
 The same as in development plus:
