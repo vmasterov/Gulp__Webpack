@@ -158,8 +158,8 @@ The same as in development plus:
 ***
 
 #### Gulp
-* **CLI version:** >=2.2.0
-* **Local version:** >=4.0.2
+* **CLI version** >=2.2.0
+* **Local version** >=4.0.2
 * **[Screencast](https://www.youtube.com/watch?v=uPk6lQoTThE&list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ)**
 
 ***
