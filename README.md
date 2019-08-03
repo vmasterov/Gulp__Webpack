@@ -37,7 +37,7 @@ The same as in development plus:
 
 ### js-webpack.js
 #### Development:
-* pick up files from 'options.entry' array. (This files are located into 'temp' folder. js-chunks.js put it there), 
+* pick up files from 'options.entry' array. (This files are located into 'temp' folder. js-chunks.js and js-head.js put it there), 
 * add sourcemap to it, 
 * Babel-loader transpile modern JS to current version,
 * uglify it,
