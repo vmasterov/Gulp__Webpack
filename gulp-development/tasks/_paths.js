@@ -2,7 +2,7 @@ module.exports = {
     development: {
         base: 'gulp-development',
 
-        pages: 'gulp-development/html/**/*.+(php|html)',
+        pages: 'gulp-development/pages/**/*.+(php|html)',
 
         styles: 'gulp-development/styles/gulp-main.scss',
         styleLibs: [
@@ -26,7 +26,7 @@ module.exports = {
 
 
     watch: {
-        pages: 'gulp-development/html/**/*.+(php|html)',
+        pages: 'gulp-development/pages/**/*.+(php|html)',
         styles: 'gulp-development/styles/**/*.*',
         js: [
             'gulp-development/js/modules/**/*.js',
@@ -47,11 +47,8 @@ module.exports = {
 
         js: 'gulp-production/js',
 
-        images: 'gulp-production/images',
-        upload: 'gulp-production/upload',
-
         files: 'gulp-production/files',
-        fonts: 'gulp-production/fonts',
+        fonts: 'gulp-production/fonts'
     },
 
 
@@ -75,7 +72,9 @@ module.exports = {
 
         watch: './gulp-development/tasks/watch',
 
-        server: './gulp-development/tasks/server'
+        server: './gulp-development/tasks/server',
+
+        'server:php': './gulp-development/tasks/server-php',
     },
 
 
@@ -89,7 +88,7 @@ module.exports = {
         manifestJsModules: './gulp-development/manifest/js-modules.json',
         manifestJsLibs: './gulp-development/manifest/js-libs.json',
 
-        manifestImages: './gulp-development/manifest/images.json',
+        manifestImages: 'gulp-development/manifest/images.json',
 
         temp: './gulp-development/temp',
 

@@ -59,7 +59,6 @@ module.exports = function (options) {
 
 
     if (!isDevelopment) {
-        console.log(process.cwd() + '/' + options.manifest);
         webpackOptions.plugins.push(new assetsPlugin({
             filename: 'js.json',
             path: process.cwd() + '/' + options.manifest,
