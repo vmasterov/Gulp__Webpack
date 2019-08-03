@@ -119,7 +119,7 @@ The same as in development plus:
 
 ### styles-libs.js
 #### Development:
-* Concatenate files from 'options.srcFrom' to gulp-libs.css,
+* concatenate files from 'options.srcFrom' to gulp-libs.css,
 * move it to folder from 'options.srcTo'.
 
 #### Production:
