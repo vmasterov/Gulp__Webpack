@@ -162,93 +162,7 @@ The same as in development plus:
 * **Local version** >=4.0.2
 * **[Screencast](https://www.youtube.com/watch?v=uPk6lQoTThE&list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ)**
 
-***
-
-#### Webpack >=4.35.2
-* **[Site](https://webpack.js.org/)**
-* **[Screencast](https://www.youtube.com/watch?v=kLMjOd-x0aQ&list=PLDyvV36pndZHfBThhg4Z0822EEG9VGenn)**
-
 *** 
-
-## Tasks
-
-### Build JS
-
-**ES6-modules (js-webpack.js)**
-* Webpack + Babel
-
-**Babel**
-* **[Site](https://babeljs.io/)**
-
-***
-
-**JS-modules**	(js-modules.js)
-
-***
-
-**JS-chunks** (js-chunks.js)
-
-***
-
-**JS-libs** (js-libs.js)
-Gulp
-
-***
-
-### Image optimazing: (images.js)
-* gulp-imagemin
-* imagemin-jpeg-recompress
-* imagemin-pngquant
-
-***
-
-### Sass preprocessor (styles-libs.js, styles.js)
-
-***
-
-
-### Files versions (pages.js)
- * gulp-rev
- * gulp-rev-rewrite
- 
-***
- 
- 
-### Static files (files.js, fonts.js)
-
-***
-
-### Watching changes (watch.js) 
-
-***
-
-### BrowserSync (server.js)
-* **[Site](https://www.browsersync.io/)**
-
-***
-
-
-### HTML (pages.js)
-
-***
-
-
-### Clean (clean.js)
-
-***
-
-
-### Pathes to files (_paths.js)
-
-***
-
-## Testing
-
-**Chai + Mocha**
-* **[Article 1](https://learn.javascript.ru/testing)**
-* **[Article 2](https://dev.to/bnorbertjs/my-nodejs-setup-mocha--chai-babel7-es6-43ei)**
-
-***
 
 ## NPM scripts
 
@@ -263,7 +177,6 @@ npm run p
 
 ***
 
-
 ### Testing build
 npm run t
 
@@ -271,7 +184,47 @@ npm run t
 
 ### Testing another scripts
 Open file into a browser: test/test-modules/test-module.spec.html
- 
+
+***
+
+## Proper links
+
+### NodeJS:
+* **[Download](https://nodejs.org/en/)** 
+* **[Screencast](https://www.youtube.com/watch?v=ILpS4Fq3lmw&list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg)**
+
+***
+
+### NPM:
+* **[Site](https://www.npmjs.com/)** 
+
+***
+
+### Gulp:
+* **[Screencast](https://www.youtube.com/watch?v=uPk6lQoTThE&list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ)**
+
+***
+
+### Webpack:
+* **[Site](https://webpack.js.org/)**
+* **[Screencast](https://www.youtube.com/watch?v=kLMjOd-x0aQ&list=PLDyvV36pndZHfBThhg4Z0822EEG9VGenn)**
+
+***
+
+### BrowserSync (server.js)
+* **[Site](https://www.browsersync.io/)**
+
+***
+
+### Babel:
+* **[Site](https://babeljs.io/)**
+
+***
+
+### Chai + Mocha (testing):
+* **[Article 1](https://learn.javascript.ru/testing)**
+* **[Article 2](https://dev.to/bnorbertjs/my-nodejs-setup-mocha--chai-babel7-es6-43ei)**
+
 ***
 
 If any links don't work, use anonymizer
