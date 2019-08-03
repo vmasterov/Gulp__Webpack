@@ -152,7 +152,12 @@ The same as in development plus:
   * CLI version >=2.2.0
   * Local version >=4.0.2
 
-*** 
+
+
+
+
+
+
 
 ## NPM scripts
 
