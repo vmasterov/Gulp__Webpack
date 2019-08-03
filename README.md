@@ -152,65 +152,54 @@ The same as in development plus:
   * CLI version >=2.2.0
   * Local version >=4.0.2
 
-
-
-
-
-
-
-
 ## NPM scripts
 
-### Development build: HTML
-#### BrowserSync start with index.html
-npm run d
+#### Development build: HTML
+##### BrowserSync start with index.html
+> npm run d
 
-### Production build: HTML
-#### BrowserSync start with index.html
-npm run p
+#### Production build: HTML
+##### BrowserSync start with index.html
+> npm run p
 
-### Development build: PHP
-#### BrowserSync start with index.php
-npm run d_php
+#### Development build: PHP
+##### BrowserSync start with index.php
+> npm run d_php
 
-### Production build: PHP
-#### BrowserSync start with index.php
-npm run p_php
+#### Production build: PHP
+##### BrowserSync start with index.php
+> npm run p_php
 
-### Testing build
-npm run t
+#### Testing build
+> npm run t
 
-### Testing another scripts
+#### Testing another scripts
 Open file into a browser: test/test-modules/test-module.spec.html
- 
-***
 
 ## Proper links
 
-### NodeJS:
+#### NodeJS:
 * **[Download](https://nodejs.org/en/)** 
 * **[Screencast](https://www.youtube.com/watch?v=ILpS4Fq3lmw&list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg)**
 
-### NPM:
+#### NPM:
 * **[Site](https://www.npmjs.com/)** 
 
-### Gulp:
+#### Gulp:
 * **[Screencast](https://www.youtube.com/watch?v=uPk6lQoTThE&list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ)**
 
-### Webpack:
+#### Webpack:
 * **[Site](https://webpack.js.org/)**
 * **[Screencast](https://www.youtube.com/watch?v=kLMjOd-x0aQ&list=PLDyvV36pndZHfBThhg4Z0822EEG9VGenn)**
 
-### BrowserSync (server.js)
+#### BrowserSync (server.js)
 * **[Site](https://www.browsersync.io/)**
 
-### Babel:
+#### Babel:
 * **[Site](https://babeljs.io/)**
 
-### Chai + Mocha (testing):
+#### Chai + Mocha (testing):
 * **[Article 1](https://learn.javascript.ru/testing)**
 * **[Article 2](https://dev.to/bnorbertjs/my-nodejs-setup-mocha--chai-babel7-es6-43ei)**
-
-***
 
 If any links don't work, use anonymizer
