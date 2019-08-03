@@ -1,140 +1,111 @@
 ## Tasks
-### _paths.js
-File with all paths that the project use.
-
-***
-
 All tasks launches from gulpfile.js and get 'options' argument that contain necessary paths.
 
-***
+#### _paths.js
+File with all paths that the project use.
 
-### clean.js
-#### Development, production:
+#### clean.js
+##### Development, production:
 * will be launched before any build, 
 * will remove folders from 'options.srcFrom'.
 
-***
-
-### images.js
-#### Development:
+#### images.js
+##### Development:
 * copy project's images to the folder from 'options.srcFrom'.
 
-#### Production:
+##### Production:
 The same as in development plus:
 * add hashes to files names,
 * optimization image,
 * write image info to the manifest.
 
-***
-
-### js-chunks.js and js-head.js
-#### Development, production:
+#### js-chunks.js and js-head.js
+##### Development, production:
 * concatenate files from 'options.srcFrom' to gulp-main.js,
 * move it to folder from 'options.srcTo' ('temp' folder), 
 * later js-webpack.js will take it from this folder for next manipulation. (Since the webpack needs one file, and there are many chunks, you must first combine them).
 
-***
-
-### js-webpack.js
-#### Development:
+#### js-webpack.js
+##### Development:
 * pick up files from 'options.entry' array. (This files are located into 'temp' folder. js-chunks.js and js-head.js put it there), 
 * add sourcemap to it, 
 * Babel-loader transpile modern JS to current version,
 * uglify it,
 * put it into 'options.srcTo'.
 
-#### Production:
+##### Production:
 The same as in development plus:
 * will be added hashes to files.
 
-***
-
-### js-libs.js
-#### Development:
+#### js-libs.js
+##### Development:
 * concatenate files from 'options.srcFrom' to gulp-main.js,
 * move it to folder from 'options.srcTo'.
 
-#### Production:
+##### Production:
 The same as in development plus:
 * uglify it,
 * rename (add '.min' suffix),
 * write file name to the manifest.
 
-***
-
-### pages.js
-#### Development:
+#### pages.js
+##### Development:
 * move files to folder from 'options.srcTo',
 * inject critical path styles as a string to head section of pages.
 
-#### Production:
+##### Production:
 The same as in development plus:
 * replace normal names of JS, CSS, images and other files with hashes names from the proper manifest.
 
-***
-
-### server.js
-#### Development and production:
+#### server.js
+##### Development and production:
 * launch BrowserSync,
 * pass 'server' option from 'options.server',
 * add 'watch' listener to BrowserSync 'change' event.
 
-***
-
-### server-php.js
-#### Development and production:
+#### server-php.js
+##### Development and production:
 * launch BrowserSync
 * launch default php server (php -S localhost:8000),
 * set 'base' option equal './gulp-production',
 * use proxy for connection,
 * add 'watch' listener to BrowserSync 'change' event.
 
-***
-
-### styles.js
-#### Development:
+#### styles.js
+##### Development:
 * move files to folder from 'options.srcTo',
 * add sourcemap to it,
 * replace SCSS with CSS.
 
-#### Production:
+##### Production:
 The same as in development plus:
 * replace normal background images paths with hashes paths,
 * write CSS file name to the manifest.
 
-***
-
-### styles-head.js
-#### Development:
+#### styles-head.js
+##### Development:
 * move files to folder from 'options.srcTo' ('temp' folder),
 * replace SCSS with CSS.
 
-#### Production:
+##### Production:
 The same as in development plus:
 * replace normal background images paths with hashes paths,
 * replace SCSS with CSS, 
 * minify it.
 
-***
-
-### styles-libs.js
-#### Development:
+#### styles-libs.js
+##### Development:
 * concatenate files from 'options.srcFrom' to gulp-libs.css,
 * move it to folder from 'options.srcTo'.
 
-#### Production:
+##### Production:
 The same as in development plus:
 * rename (add '.min' suffix),
 * write file name to the manifest.
 
-***
-
-### watch.js
-#### Development and production:
+#### watch.js
+##### Development and production:
 * watch at changes into specify paths and launch proper task.
-
-***
-
 
 ***
 ***
