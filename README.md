@@ -95,7 +95,7 @@ The same as in development plus:
 #### Development:
 * move files to folder from 'options.srcTo',
 * add sourcemap to it,
-* peplace SCSS with CSS.
+* replace SCSS with CSS.
 
 #### Production:
 The same as in development plus:
