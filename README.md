@@ -1,3 +1,37 @@
+# Common build
+
+## Requirements
+
+* NodeJS >=8.11.4
+* NPM >=6.4.1
+* Gulp
+  * CLI version >=2.2.0
+  * Local version >=4.0.2
+
+## NPM scripts
+
+#### Development build: HTML
+##### BrowserSync start with index.html
+> npm run d
+
+#### Production build: HTML
+##### BrowserSync start with index.html
+> npm run p
+
+#### Development build: PHP
+##### BrowserSync start with index.php
+> npm run d_php
+
+#### Production build: PHP
+##### BrowserSync start with index.php
+> npm run p_php
+
+#### Testing build
+> npm run t
+
+#### Testing another scripts
+Open file into a browser: test/test-modules/test-module.spec.html
+
 ## Tasks
 All tasks launches from gulpfile.js and get 'options' argument that contain necessary paths.
 
@@ -106,46 +140,6 @@ The same as in development plus:
 #### watch.js
 ##### Development and production:
 * watch at changes into specify paths and launch proper task.
-
-***
-***
-***
-
-
-
-# Common build
-
-## Requirements
-
-* NodeJS >=8.11.4
-* NPM >=6.4.1
-* Gulp
-  * CLI version >=2.2.0
-  * Local version >=4.0.2
-
-## NPM scripts
-
-#### Development build: HTML
-##### BrowserSync start with index.html
-> npm run d
-
-#### Production build: HTML
-##### BrowserSync start with index.html
-> npm run p
-
-#### Development build: PHP
-##### BrowserSync start with index.php
-> npm run d_php
-
-#### Production build: PHP
-##### BrowserSync start with index.php
-> npm run p_php
-
-#### Testing build
-> npm run t
-
-#### Testing another scripts
-Open file into a browser: test/test-modules/test-module.spec.html
 
 ## Proper links
 
