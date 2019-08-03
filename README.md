@@ -179,27 +179,27 @@ Open file into a browser: test/test-modules/test-module.spec.html
 ## Proper links
 
 #### NodeJS:
-* **[Download](https://nodejs.org/en/)** 
-* **[Screencast](https://www.youtube.com/watch?v=ILpS4Fq3lmw&list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg)**
+* [download](https://nodejs.org/en/),
+* [screencast](https://www.youtube.com/watch?v=ILpS4Fq3lmw&list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg).
 
 #### NPM:
-* **[Site](https://www.npmjs.com/)** 
+* [site](https://www.npmjs.com/).
 
 #### Gulp:
-* **[Screencast](https://www.youtube.com/watch?v=uPk6lQoTThE&list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ)**
+* [screencast](https://www.youtube.com/watch?v=uPk6lQoTThE&list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ).
 
 #### Webpack:
-* **[Site](https://webpack.js.org/)**
-* **[Screencast](https://www.youtube.com/watch?v=kLMjOd-x0aQ&list=PLDyvV36pndZHfBThhg4Z0822EEG9VGenn)**
+* [site](https://webpack.js.org/),
+* [screencast](https://www.youtube.com/watch?v=kLMjOd-x0aQ&list=PLDyvV36pndZHfBThhg4Z0822EEG9VGenn).
 
 #### BrowserSync (server.js)
-* **[Site](https://www.browsersync.io/)**
+* [site](https://www.browsersync.io/).
 
 #### Babel:
-* **[Site](https://babeljs.io/)**
+* [site](https://babeljs.io/).
 
 #### Chai + Mocha (testing):
-* **[Article 1](https://learn.javascript.ru/testing)**
-* **[Article 2](https://dev.to/bnorbertjs/my-nodejs-setup-mocha--chai-babel7-es6-43ei)**
+* [article 1](https://learn.javascript.ru/testing),
+* [article 2](https://dev.to/bnorbertjs/my-nodejs-setup-mocha--chai-babel7-es6-43ei).
 
 If any links don't work, use anonymizer
