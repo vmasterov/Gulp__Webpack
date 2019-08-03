@@ -147,26 +147,26 @@ The same as in development plus:
 ## Requirements
 
 #### NodeJS >=8.11.4
-* **Download:** https://nodejs.org/en/
-* **Screencast:** https://www.youtube.com/watch?v=ILpS4Fq3lmw&list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg
+* **[Download](https://nodejs.org/en/)** 
+* **[Screencast](https://www.youtube.com/watch?v=ILpS4Fq3lmw&list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg)**
 
 ***
 
 #### NPM >=6.4.1
-* **Site:** https://www.npmjs.com/
+* **[Site](https://www.npmjs.com/)** 
 
 ***
 
 #### Gulp
 * **CLI version:** >=2.2.0
 * **Local version:** >=4.0.2
-* **Screencast**: https://www.youtube.com/watch?v=uPk6lQoTThE&list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ
+* **[Screencast](https://www.youtube.com/watch?v=uPk6lQoTThE&list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ)**
 
 ***
 
 #### Webpack >=4.35.2
-* **Site:** https://webpack.js.org/
-* **Screencast:** https://www.youtube.com/watch?v=kLMjOd-x0aQ&list=PLDyvV36pndZHfBThhg4Z0822EEG9VGenn
+* **[Site](https://webpack.js.org/)**
+* **[Screencast](https://www.youtube.com/watch?v=kLMjOd-x0aQ&list=PLDyvV36pndZHfBThhg4Z0822EEG9VGenn)**
 
 *** 
 
@@ -178,7 +178,7 @@ The same as in development plus:
 * Webpack + Babel
 
 **Babel**
-* **Site:** https://babeljs.io/
+* **[Site](https://babeljs.io/)**
 
 ***
 
@@ -223,7 +223,7 @@ Gulp
 ***
 
 ### BrowserSync (server.js)
-* **Site:** https://www.browsersync.io/
+* **[Site](https://www.browsersync.io/)**
 
 ***
 
@@ -245,8 +245,8 @@ Gulp
 ## Testing
 
 **Chai + Mocha**
-* **Articles:**
-https://learn.javascript.ru/testing, https://dev.to/bnorbertjs/my-nodejs-setup-mocha--chai-babel7-es6-43ei
+* **[Article 1](https://learn.javascript.ru/testing)**
+* **[Article 2](https://dev.to/bnorbertjs/my-nodejs-setup-mocha--chai-babel7-es6-43ei)**
 
 ***
 
