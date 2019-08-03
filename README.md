@@ -156,25 +156,28 @@ The same as in development plus:
 
 ## NPM scripts
 
-
-### Development build
+### Development build: HTML
+#### BrowserSync start with index.html
 npm run d
 
-***
-
-### Production build
+### Production build: HTML
+#### BrowserSync start with index.html
 npm run p
 
-***
+### Development build: PHP
+#### BrowserSync start with index.php
+npm run d_php
+
+### Production build: PHP
+#### BrowserSync start with index.php
+npm run p_php
 
 ### Testing build
 npm run t
 
-***
-
 ### Testing another scripts
 Open file into a browser: test/test-modules/test-module.spec.html
-
+ 
 ***
 
 ## Proper links
@@ -183,33 +186,21 @@ Open file into a browser: test/test-modules/test-module.spec.html
 * **[Download](https://nodejs.org/en/)** 
 * **[Screencast](https://www.youtube.com/watch?v=ILpS4Fq3lmw&list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg)**
 
-***
-
 ### NPM:
 * **[Site](https://www.npmjs.com/)** 
 
-***
-
 ### Gulp:
 * **[Screencast](https://www.youtube.com/watch?v=uPk6lQoTThE&list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ)**
-
-***
 
 ### Webpack:
 * **[Site](https://webpack.js.org/)**
 * **[Screencast](https://www.youtube.com/watch?v=kLMjOd-x0aQ&list=PLDyvV36pndZHfBThhg4Z0822EEG9VGenn)**
 
-***
-
 ### BrowserSync (server.js)
 * **[Site](https://www.browsersync.io/)**
 
-***
-
 ### Babel:
 * **[Site](https://babeljs.io/)**
-
-***
 
 ### Chai + Mocha (testing):
 * **[Article 1](https://learn.javascript.ru/testing)**
