@@ -24,8 +24,13 @@ module.exports = {
         images: 'gulp-development/images/**/*.*',
         upload: 'gulp-development/upload/**/*.*',
 
-        files: 'gulp-development/files/**/*.*',
-        fonts: 'gulp-development/fonts/**/*.*'
+        // files: 'gulp-development/files/**/*.*',
+        // fonts: 'gulp-development/fonts/**/*.*',
+
+        copy: [
+            'gulp-development/files/**/*.*',
+            'gulp-development/fonts/**/*.*',
+        ]
     },
 
 
@@ -47,15 +52,13 @@ module.exports = {
     production: {
         base: 'gulp-production',
 
-        pages: 'gulp-production',
-
         styles: 'gulp-production/css',
         stylesHead: 'gulp-development/temp',
 
         js: 'gulp-production/js',
 
-        files: 'gulp-production/files',
-        fonts: 'gulp-production/fonts'
+        // files: 'gulp-production/files',
+        // fonts: 'gulp-production/fonts'
     },
 
 
@@ -74,8 +77,10 @@ module.exports = {
         images: './gulp-development/tasks/images',
         upload: './gulp-development/tasks/upload',
 
-        files: './gulp-development/tasks/files',
-        fonts: './gulp-development/tasks/fonts',
+        /*files: './gulp-development/tasks/files',
+        fonts: './gulp-development/tasks/fonts',*/
+
+        copy: './gulp-development/tasks/copy',
 
         clean: './gulp-development/tasks/clean',
 

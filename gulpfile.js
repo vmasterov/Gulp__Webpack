@@ -27,13 +27,13 @@ function lazyRequireTask(taskName, path, options) {
 
 
 /**
- * Styles
- *
  * Task name: styles
  *
- * Description:
+ * Development:
  * SCSS to CSS
- * For production: minification, rename, add hash to file name
+ *
+ * Production:
+ * minification, rename, add hash to file name
  */
 lazyRequireTask('styles', paths.tasks.styles, {
     srcFrom: paths.development.styles,
@@ -46,13 +46,13 @@ lazyRequireTask('styles', paths.tasks.styles, {
 
 
 /**
- * Styles for header
- *
  * Task name: styles-head
  *
- * Description:
- * Get CSS from temp/gulp-head.css and inline it to page's header
- * For production: minification
+ * Development:
+ * get CSS from temp/gulp-head.css and inline it to page's header
+
+ * Production:
+ * minification
  */
 lazyRequireTask('styles:head', paths.tasks.stylesHead, {
     srcFrom: paths.development.stylesHead,
@@ -64,13 +64,13 @@ lazyRequireTask('styles:head', paths.tasks.stylesHead, {
 
 
 /**
- * Styles libs
- *
  * Task name: styles:libs
  *
- * Description:
- * Concatenation libs files
- * For production: minification, rename, add hash to file name
+ * Development:
+ * concatenation libs files
+ *
+ * Production:
+ * minification, rename, add hash to file name
  */
 lazyRequireTask('styles:libs', paths.tasks.stylesLibs, {
     srcFrom: paths.development.styleLibs,
@@ -81,13 +81,13 @@ lazyRequireTask('styles:libs', paths.tasks.stylesLibs, {
 
 
 /**
- * JavaScript chunks
- *
  * Task name: js:chunks
  *
- * Description:
- * Concatenation JS
- * For production: concatenation JS
+ * Development:
+ * concatenation JS
+ *
+ * Production:
+ * concatenation JS
  */
 lazyRequireTask('js:chunks', paths.tasks.jsChunks, {
     srcFrom: paths.development.jsChunks,
@@ -97,13 +97,13 @@ lazyRequireTask('js:chunks', paths.tasks.jsChunks, {
 
 
 /**
- * JavaScript head
- *
  * Task name: js:head
  *
- * Description:
- * Concatenation JS from head section
- * For production: concatenation JS from head section
+ * Development:
+ * concatenation JS from head section
+ *
+ * Production:
+ * concatenation JS from head section
  */
 lazyRequireTask('js:head', paths.tasks.jsHead, {
     srcFrom: paths.development.jsHead,
@@ -113,13 +113,13 @@ lazyRequireTask('js:head', paths.tasks.jsHead, {
 
 
 /**
- * JavaScript libs
- *
  * Task name: js:libs
  *
- * Description:
- * Concatenation JS libraries
- * For production: minification and rename
+ * Development:
+ * concatenation JS libraries
+ *
+ * Production:
+ * minification and rename
  */
 lazyRequireTask('js:libs', paths.tasks.jsLibs, {
     srcFrom: paths.development.libs,
@@ -130,13 +130,13 @@ lazyRequireTask('js:libs', paths.tasks.jsLibs, {
 
 
 /**
- * JavaScript webpack
- *
  * Task name: js:webpack
  *
- * Description:
- * Bundling JS chunks
- * For production: minification, rename, add hash to file name
+ * Development:
+ * bundling JS chunks
+ *
+ * Production:
+ * minification, rename, add hash to file name
  */
 lazyRequireTask('js:webpack', paths.tasks.jsWebpack, {
     srcFrom: paths.development.jsChunks,
@@ -152,6 +152,23 @@ lazyRequireTask('js:webpack', paths.tasks.jsWebpack, {
 
 
 /**
+ * Task name: images
+ *
+ * Development:
+ * copy images to images and upload folders
+ *
+ * Production:
+ * minification images
+ */
+lazyRequireTask('images', paths.tasks.images, {
+    srcFrom: [paths.development.images, paths.development.upload],
+    srcTo: paths.production.base,
+    manifest: paths.common.manifest
+});
+
+
+
+/**
  * Fonts
  *
  * Task name: fonts
@@ -160,28 +177,12 @@ lazyRequireTask('js:webpack', paths.tasks.jsWebpack, {
  * Copy fonts
  * For production: copy fonts
  */
+/*
 lazyRequireTask('fonts', paths.tasks.fonts, {
     srcFrom: paths.development.fonts,
     srcTo: paths.production.fonts
 });
-
-
-
-/**
- * Images
- *
- * Task name: images
- *
- * Description:
- * Copy images to images and upload folders
- * For production: minification images
- */
-lazyRequireTask('images', paths.tasks.images, {
-    srcFrom: [paths.development.images, paths.development.upload],
-    srcTo: paths.production.base,
-    manifest: paths.common.manifest
-});
-
+*/
 
 
 /**
@@ -193,25 +194,42 @@ lazyRequireTask('images', paths.tasks.images, {
  * Copy files
  * For production: copy files
  */
+/*
 lazyRequireTask('files', paths.tasks.files, {
     srcFrom: paths.development.files,
     srcTo: paths.production.files
+});
+*/
+
+
+/**
+ * Task name: copy
+ *
+ * Development:
+ * copy static assets
+ *
+ * Production:
+ * copy static assets
+ */
+lazyRequireTask('copy', paths.tasks.copy, {
+    srcFrom: paths.development.copy,
+    srcTo: paths.production.base
 });
 
 
 
 /**
- * PAGES
- *
  * Task name: pages
  *
- * Description:
- * Copy HTML or PHP files into destination folder
- * For production: create the manifest file for JS chunks, JS modules, CSS
+ * Development:
+ * copy HTML or PHP files into destination folder, add critical path of styles to head of a page
+ *
+ * Production:
+ * create the manifest file for JS chunks, JS modules, CSS, add compress version of critical path of styles to head of a page
  */
 lazyRequireTask('pages', paths.tasks.pages, {
     srcFrom: paths.development.pages,
-    srcTo: paths.production.pages,
+    srcTo: paths.production.base,
     srcManifestCss: paths.common.manifestCss,
     srcManifestCssLibs: paths.common.manifestCssLibs,
     srcManifestJs: paths.common.manifestJs,
@@ -224,11 +242,12 @@ lazyRequireTask('pages', paths.tasks.pages, {
 
 
 /**
- * Clean
- *
  * Task name: clean
  *
- * Description:
+ * Development:
+ * Remove gulp-production, manifest, temp folders
+ *
+ * Production:
  * Remove gulp-production, manifest, temp folders
  */
 lazyRequireTask('clean', paths.tasks.clean, {
@@ -242,11 +261,12 @@ lazyRequireTask('clean', paths.tasks.clean, {
 
 
 /**
- * Watch
- *
  * Task name: watch
  *
- * Description:
+ * Development:
+ * Watching and updating CSS, HTML, images files if it was changed
+ *
+ * Production:
  * Watching and updating CSS, HTML, images files if it was changed
  */
 lazyRequireTask('watch', paths.tasks.watch, {
@@ -261,11 +281,12 @@ lazyRequireTask('watch', paths.tasks.watch, {
 
 
 /**
- * Serve
- *
  * Task name: server
  *
- * Description:
+ * Development:
+ * A basic use is to watch all files in gulp-development and update connected browsers if a change occurs
+ *
+ * Production:
  * A basic use is to watch all files in gulp-development and update connected browsers if a change occurs
  */
 lazyRequireTask('server', paths.tasks.server, {
@@ -276,13 +297,13 @@ lazyRequireTask('server', paths.tasks.server, {
 
 
 /**
- * Server PHP
- *
  * Task name: server:php
  *
- * Description:
- * Start default PHP server then start BrowserSync.
- * A basic use is to watch all files in gulp-development and update connected browsers if a change occurs
+ * Development:
+ * Start default PHP server then start BrowserSync. A basic use is to watch all files in gulp-development and update connected browsers if a change occurs
+ *
+ * Production:
+ * Start default PHP server then start BrowserSync. A basic use is to watch all files in gulp-development and update connected browsers if a change occurs
  */
 lazyRequireTask('server:php', paths.tasks.serverPhp, {
     watch: paths.common.serverWatch,
@@ -304,9 +325,10 @@ gulp.task(
             'js:chunks',
             'js:head',
             'js:libs',
-            'fonts',
             'images',
-            'files'
+            'copy'
+            /*'fonts',
+            'files'*/
         ),
         'js:webpack',
         'pages',
@@ -330,8 +352,9 @@ gulp.task(
             'js:chunks',
             'js:head',
             'js:libs',
-            'fonts',
-            'files'
+            'copy'
+            /*'fonts',
+            'files'*/
         ),
         'js:webpack',
         'pages',
@@ -355,9 +378,10 @@ gulp.task(
             'js:chunks',
             'js:head',
             'js:libs',
-            'fonts',
             'images',
-            'files'
+            'copy'
+            /*'fonts',
+            'files'*/
         ),
         'js:webpack',
         'pages',
@@ -380,8 +404,9 @@ gulp.task(
             'js:chunks',
             'js:head',
             'js:libs',
-            'fonts',
-            'files'
+            'copy'
+            /*'fonts',
+            'files'*/
         ),
         'js:webpack',
         'pages',
