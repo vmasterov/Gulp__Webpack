@@ -4,7 +4,8 @@ module.exports = {
 
         pages: 'gulp-development/pages/**/*.+(php|html)',
 
-        styles: 'gulp-development/styles/*.scss',
+        // styles: 'gulp-development/styles/*.scss',
+        styles: ['gulp-development/styles/*.scss', '!gulp-development/styles/gulp-head.scss'],
         stylesHead: 'gulp-development/styles/gulp-head.scss',
         styleLibs: [
             'node_modules/bootstrap/dist/css/bootstrap.min.css'
@@ -36,7 +37,10 @@ module.exports = {
 
     watch: {
         pages: 'gulp-development/pages/**/*.+(php|html)',
-        styles: 'gulp-development/styles/**/*.*',
+        // styles: 'gulp-development/styles/**/*.*',
+        styles: ['gulp-development/styles/**/*.*', '!gulp-development/styles/**/gulp-head.scss'],
+        // styles: ['gulp-development/js/**/*.*'],
+        stylesHead: 'gulp-development/styles/gulp-head.scss',
         js: [
             'gulp-development/js/modules/**/*.js',
             'gulp-development/js/chunks/**/*.js',

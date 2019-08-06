@@ -272,6 +272,7 @@ lazyRequireTask('clean', paths.tasks.clean, {
 lazyRequireTask('watch', paths.tasks.watch, {
     srcFrom: {
         watchStyles: paths.watch.styles,
+        watchStylesHead: paths.watch.stylesHead,
         watchPages: paths.watch.pages,
         watchJs: paths.watch.js,
         watchImages: paths.watch.images

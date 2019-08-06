@@ -1,10 +1,13 @@
+@import 'abstract/mixins';
+
+/* Common styles */
 /* Fonts example */
 @font-face {
-  font-family: "Oswald";
+  font-family: "PT Serif";
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: local("Oswald"), url("/fonts/Oswald[wght].ttf") format("opentype");
+  src: local("PT Serif"), url("/fonts/PTF55F.ttf") format("opentype");
 
   /* For modern browsers this fonts enough */
   /*src: url("/fonts/Helvetica/HelveticaRegular/HelveticaRegular.woff2") format("woff2"),*/
@@ -12,155 +15,108 @@
 }
 
 @font-face {
-  font-family: "Oswald SemiBold";
-  font-weight: bold;
+  font-family: "PT Serif Caption";
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: local("Oswald SemiBold"), url("/fonts/Oswald[wght].ttf") format("opentype");
+  src: local("PT Serif Caption"), url("/fonts/PTZ55F.ttf") format("opentype");
 
   /* For modern browsers this fonts enough */
   /*src: url("/fonts/Helvetica/HelveticaRegular/HelveticaRegular.woff2") format("woff2"),*/
   /*src: url("/fonts/Helvetica/HelveticaRegular/HelveticaRegular.woff") format("woff"),*/
 }
-/* Fonts example */
+/* !Fonts example */
+/* !Common styles */
 
+/* Main page */
 body{
-  font-family: 'Oswald', Arial, sans-serif !important;
-  font-size: 16px !important;
-}
-
-.header{
-  position: relative;
-  width: 100%;
-  height: 650px;
+  height: 100vh;
   background-color: #fff;
-  background-image: url('/upload/2-1920.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url('/upload/main/main-page-bg-320.jpg');
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'PT Serif Caption', Arial, sans-serif !important;
+  font-size: 16px !important;;
+
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(63, 86, 100, 0.4);
+    background: linear-gradient(-25deg, rgba(0, 255, 54, 0.66), rgba(18, 9, 255, 0.45));
+  }
 }
 
-.header:after{
-  content: '';
+.main-header-wrapper{
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(187, 236, 255, 0.35);
+  top: calc(50% - 40px);
+  left: calc(50% - 90px);
+  width: 180px;
+  height: 80px;
 }
 
-.header .header__text{
-  position: relative;
-  margin-top: 150px;
-  z-index: 1;
+.test-main-header{
   color: #fff;
-  text-shadow: 0 2px 1px black;
+  font-weight: 900;
 }
+/* !Main page */
 
-.test-header{
-  text-align: center;
-}
 
-h1.test-header{
-  font-size: 95px;
-  line-height: 130px;
-  font-weight: bold;
-}
 
-.images img{
-  width: 260px;
-  height: 170px;
-}
+/* Header media queries */
+/* min-width: 768px */
+@include respond-above(m){
+  /* Main page */
+  body{
+    background-color: blue;
+    background-image: url('/upload/main/main-page-bg-768.jpg');
 
-.test-content{
-  margin-bottom: 60px;
-}
-
-h2.test-header{
-  font-weight: normal;
-}
-
-.test-image{
-  margin-bottom: 15px;
-  width: 100%;
-  height: 170px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.test-images-0{
-  background-image: url('/images/0-260.jpg');
-}
-
-.test-images-1{
-  background-image: url('/images/sub-folder/0-260.jpg');
-}
-
-.test-upload-0{
-  background-image: url('/images/1-260.jpg');
-}
-
-.test-upload-1{
-  background-image: url('/images/2-260.jpg');
-}
-
-@media (max-width:991px){
-  .header{
-    height:450px;
-    background-image: url('/upload/2-991.jpg');
+    &::before{
+      background: linear-gradient(-25deg, rgba(0, 255, 54, 0.49019607843137253), rgba(18, 9, 255, 0.21176470588235294));
+    }
   }
 
-  .header__text{
-    margin-top:120px
-  }
-  h1.test-header{
-    font-size:60px;
-    line-height:85px
-  }
-
-  .images img{
-    margin:0 auto 15px;
-    display:block
+  .main-header-wrapper{
+    position: absolute;
+    top: calc(50% - 60px);
+    left: calc(50% - 215px);
+    width: 430px;
+    height: 140px;
   }
 
-  .test-images-0{
-    background-image: url('/images/0.jpg');
+  .test-main-header{
+    font-size: 90px;
+    text-shadow: 0 0 14px #26618a9c;
   }
-
-  .test-images-1{
-    background-image: url('/images/sub-folder/0.jpg');
-  }
-
-  .test-upload-0{
-    background-image: url('/images/1.jpg');
-  }
-
-  .test-upload-1{
-    background-image: url('/images/2.jpg');
-  }
+  /* !Main page */
 }
 
-@media (max-width:767px){
-  .header{
-    height:450px;
-    background-image: url('/upload/2-767.jpg');
+
+
+@include respond-above(xxl){
+  /* min-width: 1200px */
+  /* Main page */
+  body{
+    position: relative;
+    background-image: url('/upload/main/main-page-bg-1920.jpg');
   }
 
-  .header__text{
-    margin-top:180px
+  .main-header-wrapper{
+    position: absolute;
+    top: calc(50% - 80px);
+    left: calc(50% - 400px);
+    width: 800px;
+    height: 166px;
   }
 
-  h1.test-header{
-    font-size:24px;
-    line-height:35px
+  .test-main-header{
+    font-size: 150px;
+    text-shadow: 0 0 14px #26618a9c;
   }
+  /* !Main page */
 }
-
-@media (max-width:320px) {
-  .header {
-    height: 450px;
-    background-image: url('/upload/2-320.jpg');
-  }
-}
+/* !Header media queries */

@@ -1,0 +1,7 @@
+fav-ico
+mobile-first
+add own js (head, foot) and css (head, dynamic) on page
+add page preloader
+add dynamic load image
+
+do this steps for php page too

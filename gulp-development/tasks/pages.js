@@ -20,9 +20,11 @@ module.exports = function(options) {
 
     const styleHeadContent = fs.readFileSync(process.cwd() + options.srcStylesHead, 'utf8');
 
+    // console.log(styleHeadContent);
+
     return function() {
         return combine(
-            gulp.src(options.srcFrom, {since: gulp.lastRun('pages')}),
+            gulp.src(options.srcFrom),
             $.if(!isDevelopment, combine(
                 $.revRewrite({
                     manifest: manifestJs,
